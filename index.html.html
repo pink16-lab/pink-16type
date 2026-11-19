@@ -1,0 +1,2009 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>16タイプ診断・ピンク｜大人の恋愛心理・スキンシップ傾向</title>
+  <meta name="description" content="全30問・7段階回答であなたの「夜の素顔」とスキンシップ本能を16タイプのドット絵キャラクターに診断！相性の良い相手・危険な相手もわかります。" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="16タイプ診断・ピンク" />
+  <meta property="og:title" content="16タイプ診断・ピンク｜大人の恋愛心理・スキンシップ傾向" />
+  <meta property="og:description" content="全30問であなたの夜の素顔とスキンシップ本能を16タイプのドット絵キャラに診断！相性マップ＆全16タイプ図鑑つき。" />
+  <meta property="og:locale" content="ja_JP" />
+  <!-- 画像を一緒に公開する場合は、同じフォルダに ogp.png (1200x630推奨) を置いて下の行のURLを書き換えてください -->
+  <!-- <meta property="og:image" content="https://あなたの公開URL/ogp.png" /> -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="16タイプ診断・ピンク｜大人の恋愛心理・スキンシップ傾向" />
+  <meta name="twitter:description" content="全30問であなたの夜の素顔とスキンシップ本能を16タイプのドット絵キャラに診断！" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23e6427a'/%3E%3Cpath d='M16 25s-8.5-5.3-8.5-11.2A4.8 4.8 0 0 1 16 10.6a4.8 4.8 0 0 1 8.5 3.2C24.5 19.7 16 25 16 25z' fill='%23fff'/%3E%3C/svg%3E" />
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Zen+Maru+Gothic:wght@500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-base: #f9eff4;
+      --bg-dots: #ead3df;
+      --ink-main: #2d1b3d;
+      --ink-sub: #6c557d;
+      --pink-main: #e6427a;
+      --purple-main: #7b4ce2;
+      --border-retro: #321f45;
+      --shadow-retro: #e6c6d7;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Zen Maru Gothic', sans-serif;
+      background-color: var(--bg-base);
+      background-image: radial-gradient(var(--bg-dots) 1.3px, transparent 1.3px);
+      background-size: 20px 20px;
+      color: var(--ink-main);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    .font-pixel {
+      font-family: 'DotGothic16', monospace;
+    }
+    .pixel-canvas {
+      image-rendering: pixelated;
+      image-rendering: crisp-edges;
+    }
+    /* Cute Indie / Retro Pop Card Styling */
+    .retro-card {
+      background: #ffffff;
+      border: 2.5px solid var(--border-retro);
+      box-shadow: 4px 4px 0 var(--shadow-retro);
+      border-radius: 1.5rem;
+    }
+    .retro-card-soft {
+      background: #fffbfd;
+      border: 2px solid #d9bdd0;
+      box-shadow: 3px 3px 0 #edd8e6;
+      border-radius: 1.35rem;
+    }
+    .retro-btn {
+      border: 2.5px solid var(--border-retro);
+      box-shadow: 3px 3px 0 var(--border-retro);
+      transition: transform 0.12s ease, box-shadow 0.12s ease, background-color 0.15s ease;
+    }
+    .retro-btn:hover:not(:disabled) {
+      transform: translate(-1px, -1px);
+      box-shadow: 4px 4px 0 var(--border-retro);
+    }
+    .retro-btn:active:not(:disabled) {
+      transform: translate(2px, 2px);
+      box-shadow: 1px 1px 0 var(--border-retro);
+    }
+
+    /* Original Cozy Flat-Lay Angled Smartphone Stage */
+    .phone-stage {
+      background-color: #f3dfea;
+      background-image:
+        linear-gradient(90deg, rgba(255,255,255,0.42) 50%, transparent 50%),
+        linear-gradient(rgba(255,255,255,0.42) 50%, transparent 50%);
+      background-size: 36px 36px;
+      border: 2.5px solid var(--border-retro);
+      box-shadow: 6px 6px 0 var(--shadow-retro);
+      position: relative;
+      overflow: hidden;
+    }
+    .phone-tilt-wrap {
+      transform: rotate(-2.4deg);
+      transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .phone-tilt-wrap:hover {
+      transform: rotate(-0.8deg) translateY(-2px);
+    }
+    .phone-frame {
+      background: linear-gradient(145deg, #ffd6e8 0%, #f5b4d0 100%);
+      border: 3.5px solid #2d1b3d;
+      border-radius: 2.3rem;
+      box-shadow:
+        8px 10px 0 rgba(45, 27, 61, 0.22),
+        inset 0 0 0 3px #fff3f8;
+      position: relative;
+      z-index: 2;
+    }
+    @keyframes charmSwing {
+      0%, 100% { transform: rotate(-4deg); }
+      50% { transform: rotate(5deg); }
+    }
+    .charm-swing {
+      transform-origin: top center;
+      animation: charmSwing 2.8s ease-in-out infinite;
+    }
+    .phone-screen {
+      background: radial-gradient(circle at 50% 35%, #34313b 0%, #242228 72%, #1d1b21 100%);
+      border-radius: 1.55rem;
+      border: 2px solid #141317;
+      position: relative;
+      overflow: hidden;
+    }
+    .phone-screen::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.025) 0px,
+        rgba(255, 255, 255, 0.025) 1px,
+        transparent 1px,
+        transparent 3px
+      );
+      pointer-events: none;
+    }
+    .rpg-choice {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      padding: 0.55rem 0.9rem;
+      border-radius: 0.75rem;
+      transition: background-color 0.15s ease, color 0.15s ease, transform 0.12s ease;
+      cursor: pointer;
+    }
+    .rpg-choice .rpg-cursor {
+      opacity: 0;
+      color: #ff8fb8;
+      transition: opacity 0.12s ease;
+    }
+    .rpg-choice:hover,
+    .rpg-choice:focus-visible,
+    .rpg-choice.active-choice {
+      background: rgba(255, 143, 184, 0.16);
+      color: #fff0f6;
+      outline: none;
+    }
+    .rpg-choice:hover .rpg-cursor,
+    .rpg-choice:focus-visible .rpg-cursor,
+    .rpg-choice.active-choice .rpg-cursor {
+      opacity: 1;
+      animation: cursorBlink 0.9s steps(2, start) infinite;
+    }
+    @keyframes cursorBlink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.25; }
+    }
+
+    /* 16Personalities-style Likert circles */
+    .likert-btn {
+      transition: transform 0.15s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.15s ease, box-shadow 0.15s ease;
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 9999px;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+    .likert-btn:hover { transform: scale(1.12); }
+    .likert-btn:active { transform: scale(0.95); }
+    .likert-btn.agree {
+      border: 2.5px solid #e6427a;
+      background: rgba(230, 66, 122, 0.05);
+    }
+    .likert-btn.agree.selected {
+      background: #e6427a;
+      box-shadow: 0 0 0 4px rgba(230, 66, 122, 0.22);
+    }
+    .likert-btn.neutral {
+      border: 2.5px solid #9d8ca8;
+      background: rgba(157, 140, 168, 0.06);
+    }
+    .likert-btn.neutral.selected {
+      background: #8c7a99;
+      box-shadow: 0 0 0 4px rgba(140, 122, 153, 0.24);
+    }
+    .likert-btn.disagree {
+      border: 2.5px solid #7b4ce2;
+      background: rgba(123, 76, 226, 0.05);
+    }
+    .likert-btn.disagree.selected {
+      background: #7b4ce2;
+      box-shadow: 0 0 0 4px rgba(123, 76, 226, 0.22);
+    }
+    .likert-btn.selected::after {
+      content: '✓';
+      color: #ffffff;
+      font-weight: 900;
+      font-size: 0.85em;
+      line-height: 1;
+    }
+    .question-card {
+      transition: border-color 0.22s ease, box-shadow 0.22s ease, background-color 0.22s ease;
+    }
+    .question-card.answered {
+      border-color: #e6427a;
+      background: #ffffff;
+    }
+    .question-card.unanswered-highlight {
+      border-color: #e11d48;
+      box-shadow: 0 0 0 4px rgba(225, 29, 72, 0.2);
+    }
+    .fade-in {
+      animation: fadeInUp 0.32s ease both;
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .toast-enter {
+      animation: toastPop 0.26s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+    @keyframes toastPop {
+      from { opacity: 0; transform: translate(-50%, 14px); }
+      to { opacity: 1; transform: translate(-50%, 0); }
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-pink-200 selection:text-pink-950">
+
+  <!-- Top Navigation (Centered Cute Retro Header) -->
+  <header class="sticky top-0 z-40 border-b-2 border-[#321f45]/15 bg-[#fff8fb]/92 backdrop-blur-md">
+    <div class="max-w-4xl mx-auto px-4 h-16 flex items-center justify-between gap-2">
+      <button id="navLogoBtn" type="button" class="flex items-center gap-2 text-left group">
+        <span class="w-9 h-9 rounded-xl bg-pink-500 border-2 border-[#321f45] text-white flex items-center justify-center shadow-[2px_2px_0_#321f45] font-pixel text-base group-hover:scale-105 transition">♥</span>
+        <div class="leading-tight">
+          <div class="font-pixel text-base sm:text-lg tracking-wide text-[#2d1b3d]">16タイプ診断・<span class="text-pink-600">ピンク</span></div>
+        </div>
+      </button>
+
+      <nav class="flex items-center gap-1.5 sm:gap-2">
+        <button id="navQuizBtn" type="button" class="px-3.5 sm:px-4 py-1.5 rounded-full border-2 border-[#321f45] text-xs sm:text-sm font-bold text-pink-700 bg-pink-50 hover:bg-pink-100 transition">診断する</button>
+        <button id="navDexBtn" type="button" class="px-3.5 sm:px-4 py-1.5 rounded-full border-2 border-[#321f45] text-xs sm:text-sm font-bold text-[#2d1b3d] bg-white hover:bg-purple-50 transition">キャラ図鑑</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main id="appRoot" class="max-w-4xl mx-auto px-4 py-6 sm:py-9">
+
+    <!-- VIEW 1: LANDING / RETRO SMARTPHONE HERO (Inspired by IMG_4111) -->
+    <section id="viewHome" class="fade-in space-y-8">
+      <!-- Centered Cozy Flat-Lay Smartphone Stage (Original Top-Down Angled Composition) -->
+      <div class="phone-stage rounded-[2rem] px-4 pt-9 pb-7 sm:px-8 sm:pt-11 sm:pb-9 flex flex-col items-center">
+        <!-- Cute floating stickers on the gingham desk -->
+        <div class="hidden sm:flex items-center gap-1.5 absolute top-5 left-6 px-3 py-1 rounded-full bg-white/90 border-2 border-[#2d1b3d] font-pixel text-[11px] text-pink-600 -rotate-6 shadow-[2px_2px_0_#2d1b3d]">
+          <span>♥</span><span>SECRET TEST</span>
+        </div>
+        <div class="hidden sm:flex items-center gap-1 absolute top-6 right-7 px-3 py-1 rounded-full bg-[#fff5fa] border-2 border-[#2d1b3d] font-pixel text-[11px] text-purple-700 rotate-6 shadow-[2px_2px_0_#2d1b3d]">
+          <span>✦</span><span>全30問</span>
+        </div>
+
+        <!-- Original Angled Phone + Heart Strap Charm + Bottom-Right Resting Finger -->
+        <div class="relative flex items-center justify-center w-full max-w-[360px] py-2">
+          <!-- Soft desk shadow under phone -->
+          <div class="absolute inset-x-10 bottom-1 h-8 rounded-full bg-[#2d1b3d]/15 blur-md pointer-events-none"></div>
+
+          <div class="phone-tilt-wrap relative">
+            <!-- Cute Heart Strap Charm dangling from top-right corner -->
+            <svg class="charm-swing absolute -right-9 top-9 w-12 h-28 pointer-events-none z-0" viewBox="0 0 48 112" fill="none" aria-hidden="true">
+              <path d="M4 10 C22 10 26 24 26 42" stroke="#2d1b3d" stroke-width="3" stroke-linecap="round"/>
+              <circle cx="26" cy="46" r="5" fill="#fff0f6" stroke="#2d1b3d" stroke-width="2.5"/>
+              <circle cx="26" cy="58" r="4" fill="#f9a8d4" stroke="#2d1b3d" stroke-width="2.5"/>
+              <path d="M26 94 C13 84 10 74 16 68 C20 64 24 67 26 71 C28 67 32 64 36 68 C42 74 39 84 26 94 Z" fill="#e6427a" stroke="#2d1b3d" stroke-width="2.8" stroke-linejoin="round"/>
+              <circle cx="21" cy="75" r="2" fill="#ffffff"/>
+            </svg>
+
+            <!-- Cute Sticker Deco on bottom-left corner of phone case -->
+            <svg class="absolute -left-5 bottom-12 w-10 h-10 pointer-events-none z-20 -rotate-12" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+              <path d="M20 4 L23.5 14.5 L34 16 L26 23 L28 34 L20 28.5 L12 34 L14 23 L6 16 L16.5 14.5 Z" fill="#fde047" stroke="#2d1b3d" stroke-width="2.6" stroke-linejoin="round"/>
+            </svg>
+
+            <!-- Smartphone Body (Pastel Pink Case) -->
+            <div class="phone-frame w-[276px] sm:w-[298px] p-3">
+              <!-- Top Speaker Notch -->
+              <div class="w-16 h-1.5 rounded-full bg-[#2d1b3d]/35 mx-auto mb-2"></div>
+
+              <div class="phone-screen px-5 py-6 sm:py-7 flex flex-col items-center text-center text-[#f4eef7] min-h-[410px] justify-between">
+                <div class="w-full flex items-center justify-between text-[10px] font-pixel text-white/45 px-1">
+                  <span>♥ PINK-OS</span>
+                  <span>23:59</span>
+                </div>
+
+                <!-- Center Pixel Title + Rotating Mini Character -->
+                <div class="space-y-3 my-2 flex flex-col items-center">
+                  <div class="p-1.5 rounded-2xl bg-white/10 border border-white/15">
+                    <canvas id="heroMiniCanvas" class="pixel-canvas w-24 h-24 rounded-xl" width="128" height="128"></canvas>
+                  </div>
+                  <div>
+                    <h1 class="font-pixel text-2xl sm:text-[26px] tracking-widest text-white drop-shadow">
+                      PINK 16
+                    </h1>
+                    <p class="font-pixel text-xs text-pink-300 mt-0.5 tracking-wider">16タイプ診断・ピンク</p>
+                  </div>
+                </div>
+
+                <!-- RPG Dialogue Prompt & Clean 2 Choices -->
+                <div class="w-full space-y-4">
+                  <p class="font-pixel text-sm leading-relaxed text-[#ece4f2] tracking-wide">
+                    あなたの「夜の素顔」を<br />
+                    覗いてみようかな？
+                  </p>
+
+                  <div class="space-y-1.5 text-left font-pixel text-sm max-w-[196px] mx-auto">
+                    <button id="startQuizBtn" type="button" class="rpg-choice active-choice w-full text-pink-100">
+                      <span class="rpg-cursor">▶</span>
+                      <span>診断をはじめる</span>
+                    </button>
+                    <button id="openDexFromHeroBtn" type="button" class="rpg-choice w-full text-white/75">
+                      <span class="rpg-cursor">▶</span>
+                      <span>16キャラ図鑑</span>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="text-[10px] font-pixel text-white/35 pt-1">
+                  TAP TO START ♥
+                </div>
+              </div>
+            </div>
+
+            <!-- Cute Illustrated Hand reaching playfully from bottom-right edge (different angle!) -->
+            <svg class="absolute -right-7 -bottom-6 w-28 h-24 pointer-events-none z-20" viewBox="0 0 120 100" fill="none" aria-hidden="true">
+              <path d="M18 32 C12 22 20 10 32 16 L54 28 C58 20 70 20 74 30 L82 42 C96 52 108 66 116 86 L62 96 C46 84 36 66 26 50 Z" fill="#f7cbb8" stroke="#2d1b3d" stroke-width="3.2" stroke-linejoin="round"/>
+              <path d="M22 24 C25 20 30 20 32 24 C30 28 24 28 22 24 Z" fill="#ff8fb8"/>
+              <path d="M62 84 L116 72 L118 98 L56 98 Z" fill="#c084fc" stroke="#2d1b3d" stroke-width="3.2" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Subtle Centered Subtitle under Phone -->
+        <p class="mt-7 text-center text-xs sm:text-sm font-bold text-[#4b355c] max-w-md leading-relaxed">
+          序盤はやさしく、終盤ほどドキドキする全30問。<br />
+          主導権・雰囲気・愛情表現・進め方の4軸から、あなたの恋愛心理をドット絵キャラで診断します。
+        </p>
+      </div>
+
+      <!-- Saved Previous Result Banner (Centered Cute Ticket Style) -->
+      <div id="savedResultBanner" class="hidden retro-card p-4 sm:p-5 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+        <div class="flex flex-col sm:flex-row items-center gap-3.5">
+          <canvas id="savedResultCanvas" class="pixel-canvas w-16 h-16 rounded-2xl border-2 border-[#321f45]" width="96" height="96"></canvas>
+          <div>
+            <div class="font-pixel text-xs text-pink-600">★ 前回の診断データ</div>
+            <div id="savedResultTitle" class="font-black text-base text-[#2d1b3d] mt-0.5"></div>
+          </div>
+        </div>
+        <button id="viewSavedResultBtn" type="button" class="retro-btn px-5 py-2 rounded-full bg-pink-500 text-white text-xs sm:text-sm font-bold">結果もういちど見る</button>
+      </div>
+
+      <!-- Centered 4 Axes Cute Guide Window -->
+      <div class="retro-card p-6 sm:p-7 space-y-5 text-center">
+        <div class="space-y-1">
+          <div class="font-pixel text-xs text-pink-600 tracking-widest">♥ HOW IT WORKS ♥</div>
+          <h2 class="font-pixel text-lg sm:text-xl text-[#2d1b3d]">診断する4つの恋愛・スキンシップ軸</h2>
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-3.5 text-center">
+          <div class="retro-card-soft p-4 space-y-1">
+            <div class="font-pixel text-xs text-pink-600">01. 主導権</div>
+            <div class="font-pixel text-base text-[#2d1b3d]"><span class="text-pink-600">L</span> 握りたい ⇄ 握られたい <span class="text-purple-600">F</span></div>
+            <p class="text-xs text-[#6c557d] leading-relaxed">二人の距離や夜のペースをリードしたいか、相手に委ねて奪われたいか。</p>
+          </div>
+          <div class="retro-card-soft p-4 space-y-1">
+            <div class="font-pixel text-xs text-pink-600">02. 好みの雰囲気</div>
+            <div class="font-pixel text-base text-[#2d1b3d]"><span class="text-pink-600">R</span> ロマンチック ⇄ 刺激重視 <span class="text-purple-600">S</span></div>
+            <p class="text-xs text-[#6c557d] leading-relaxed">甘く蕩けるムードに浸りたいか、スリルや背徳感のスパイスに燃えるか。</p>
+          </div>
+          <div class="retro-card-soft p-4 space-y-1">
+            <div class="font-pixel text-xs text-pink-600">03. 愛情表現の基準</div>
+            <div class="font-pixel text-base text-[#2d1b3d]"><span class="text-pink-600">E</span> 心の繋がり ⇄ スキンシップ <span class="text-purple-600">P</span></div>
+            <p class="text-xs text-[#6c557d] leading-relaxed">言葉や視線で心を確かめたいか、体温と肌感覚で直接愛を感じたいか。</p>
+          </div>
+          <div class="retro-card-soft p-4 space-y-1">
+            <div class="font-pixel text-xs text-pink-600">04. 進め方</div>
+            <div class="font-pixel text-base text-[#2d1b3d]"><span class="text-pink-600">D</span> 計画的 ⇄ 衝動的 <span class="text-purple-600">I</span></div>
+            <p class="text-xs text-[#6c557d] leading-relaxed">段取りよく雰囲気を高めたいか、理性が外れる瞬間の勢いに任せたいか。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIEW 2: QUIZ -->
+    <section id="viewQuiz" class="hidden fade-in max-w-2xl mx-auto space-y-5">
+      <!-- Sticky Progress Header -->
+      <div class="sticky top-16 z-30 -mx-4 px-4 py-3 bg-[#f9eff4]/95 backdrop-blur-md border-b-2 border-[#321f45]/10">
+        <div class="flex items-center justify-between text-xs font-bold mb-2">
+          <div class="flex items-center gap-2">
+            <span id="stageBadge" class="font-pixel px-2.5 py-1 rounded-full bg-pink-100 text-pink-700 border border-pink-300">Stage 1: 恋愛の基本</span>
+            <span id="pageIndicator" class="font-pixel text-[#6c557d]">1 / 6</span>
+          </div>
+          <span id="progressCount" class="font-pixel text-pink-600">0 / 30 回答済み</span>
+        </div>
+        <div class="w-full h-3 bg-white rounded-full overflow-hidden border-2 border-[#321f45]">
+          <div id="progressBar" class="h-full bg-gradient-to-r from-pink-400 via-rose-500 to-purple-500 transition-all duration-300" style="width: 0%"></div>
+        </div>
+      </div>
+
+      <!-- Scale Legend -->
+      <div class="retro-card-soft px-4 py-2.5 flex items-center justify-between text-xs font-pixel">
+        <span class="text-pink-600">◀ そう思う</span>
+        <span class="text-[#8c7a99]">どちらとも言えない</span>
+        <span class="text-purple-600">そう思わない ▶</span>
+      </div>
+
+      <!-- Questions Container -->
+      <div id="questionsContainer" class="space-y-4"></div>
+
+      <!-- Quiz Navigation Controls -->
+      <div class="flex flex-wrap items-center justify-between gap-3 pt-2 pb-6">
+        <button id="prevPageBtn" type="button" class="retro-btn px-5 py-2.5 rounded-full bg-white text-[#2d1b3d] font-bold text-sm disabled:opacity-40 disabled:cursor-not-allowed">
+          ◀ 前の5問
+        </button>
+
+        <div class="flex items-center gap-2.5">
+          <button id="randomFillBtn" type="button" class="px-3 py-2 rounded-full text-xs font-bold text-[#7c648a] hover:text-pink-600 hover:bg-pink-100/60 transition" title="テスト用にランダムで全問回答します">
+            お試しランダム回答
+          </button>
+          <button id="nextPageBtn" type="button" class="retro-btn px-7 py-2.5 rounded-full bg-pink-500 hover:bg-pink-400 text-white font-bold text-sm">
+            次の5問へ ▶
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIEW 3: RESULT PAGE -->
+    <section id="viewResult" class="hidden fade-in max-w-3xl mx-auto space-y-6">
+      <!-- Top Hero Card (Centered Magazine / Indie Card Style) -->
+      <div id="resultHeroCard" class="retro-card overflow-hidden">
+        <div id="resultBanner" class="p-6 sm:p-9 text-white text-center relative overflow-hidden">
+          <div class="relative z-10 flex flex-col items-center space-y-3.5">
+            <div id="resultContextLabel" class="font-pixel text-xs tracking-widest px-3 py-1 rounded-full bg-black/25 border border-white/25">YOUR PINK TYPE</div>
+
+            <div class="p-2.5 rounded-3xl bg-white/18 backdrop-blur-sm border-2 border-white/40 shadow-lg">
+              <canvas id="resultSpriteCanvas" class="pixel-canvas rounded-2xl w-44 h-44 sm:w-48 sm:h-48" width="192" height="192"></canvas>
+            </div>
+
+            <div id="resultGroupBadge" class="font-pixel text-xs px-3 py-1 rounded-full bg-black/30"></div>
+
+            <div class="space-y-1">
+              <div id="resultCode" class="font-pixel text-4xl sm:text-5xl tracking-widest drop-shadow"></div>
+              <h2 id="resultName" class="text-2xl sm:text-3xl font-black tracking-tight"></h2>
+              <p id="resultSubName" class="text-xs sm:text-sm font-bold text-white/85"></p>
+            </div>
+
+            <p id="resultCatchphrase" class="max-w-xl text-sm sm:text-base font-bold leading-relaxed bg-black/20 rounded-2xl px-5 py-3.5 border border-white/20"></p>
+
+            <div class="flex flex-wrap justify-center gap-2.5 pt-2">
+              <button id="copyResultBtn" type="button" class="retro-btn px-4 py-2 rounded-full bg-white text-[#2d1b3d] font-bold text-xs sm:text-sm">
+                📋 診断結果をコピー
+              </button>
+              <button id="retakeQuizBtn" type="button" class="retro-btn px-4 py-2 rounded-full bg-pink-600 text-white font-bold text-xs sm:text-sm">
+                ↺ もう一度診断する
+              </button>
+              <button id="backToMyResultBtn" type="button" class="hidden retro-btn px-4 py-2 rounded-full bg-amber-300 text-[#2d1b3d] font-bold text-xs sm:text-sm">
+                ◀ 自分の結果に戻る
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4 Axis Breakdown -->
+        <div class="p-6 sm:p-7 bg-white border-t-2 border-[#321f45]/15">
+          <div class="text-center mb-5">
+            <h3 class="font-pixel text-base sm:text-lg text-[#2d1b3d]">♥ 4つの心理パラメーター ♥</h3>
+            <span id="axisModeNote" class="text-xs font-bold text-[#8c7a99]">あなたの回答バランス</span>
+          </div>
+          <div id="axisBarsContainer" class="grid sm:grid-cols-2 gap-5"></div>
+        </div>
+      </div>
+
+      <!-- Section 1: 恋愛心理・基本の素顔 -->
+      <div class="retro-card p-6 sm:p-7 space-y-3">
+        <div class="flex items-center justify-center gap-2">
+          <span class="font-pixel text-pink-500">♥</span>
+          <h3 class="font-pixel text-lg sm:text-xl text-[#2d1b3d]">恋愛心理・基本の素顔</h3>
+          <span class="font-pixel text-pink-500">♥</span>
+        </div>
+        <p id="resultBio" class="text-sm sm:text-[15px] text-[#453152] leading-relaxed"></p>
+      </div>
+
+      <!-- CUTE ANIMATED PIXEL VIGNETTE #1 (GIF-like mini illustration between sections!) -->
+      <div class="flex flex-col items-center">
+        <div class="retro-card-soft px-4 py-3.5 w-full max-w-md flex flex-col items-center gap-2 text-center bg-[#fff8fc]">
+          <canvas id="vignetteScene1" class="pixel-canvas w-full max-w-[320px] h-auto rounded-xl border-2 border-[#321f45]" width="320" height="128"></canvas>
+          <p id="vignetteCaption1" class="font-pixel text-xs text-pink-700"></p>
+        </div>
+      </div>
+
+      <!-- Section 2: スキンシップ＆夜の過激傾向 -->
+      <div class="retro-card p-6 sm:p-7 bg-gradient-to-br from-[#fff2f7] to-[#f8f0ff] space-y-4">
+        <div class="flex flex-col items-center gap-1.5 text-center">
+          <span id="resultSpicyLevel" class="font-pixel px-3 py-1 rounded-full bg-rose-600 text-white text-xs border border-[#321f45]"></span>
+          <h3 class="font-pixel text-lg sm:text-xl text-[#3b122b]">🔥 スキンシップ＆夜の過激傾向 🔥</h3>
+        </div>
+        <p id="resultNightStyle" class="text-sm sm:text-[15px] text-[#4a2039] leading-relaxed"></p>
+        <div class="pt-3 border-t-2 border-dashed border-rose-200">
+          <div class="font-pixel text-xs text-rose-700 mb-1.5 text-center">💋 スイッチが入る瞬間・弱点ワード</div>
+          <p id="resultTrigger" class="text-sm font-bold text-[#2f1024] bg-white rounded-2xl px-4 py-3 border-2 border-rose-200 text-center"></p>
+        </div>
+      </div>
+
+      <!-- Section 3: Meters + Strengths & Landmines -->
+      <div class="grid md:grid-cols-2 gap-5">
+        <div class="retro-card p-6 space-y-4">
+          <h3 class="font-pixel text-base text-[#2d1b3d] text-center">★ 大人パラメーター ★</h3>
+          <div id="metersContainer" class="space-y-3"></div>
+        </div>
+
+        <div class="retro-card p-6 space-y-4">
+          <div>
+            <h4 class="font-pixel text-sm text-pink-700 mb-2 text-center">✨ 相手を沼らせる魅力</h4>
+            <ul id="resultStrengths" class="space-y-1.5 text-sm text-[#453152]"></ul>
+          </div>
+          <div class="pt-3 border-t-2 border-dashed border-pink-100">
+            <h4 class="font-pixel text-sm text-purple-700 mb-2 text-center">⚠️ 恋愛の地雷・注意点</h4>
+            <ul id="resultWarnings" class="space-y-1.5 text-sm text-[#453152]"></ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- CUTE ANIMATED PIXEL VIGNETTE #2 (Best Match Duo Mini-Scene!) -->
+      <div class="flex flex-col items-center">
+        <div class="retro-card-soft px-4 py-3.5 w-full max-w-md flex flex-col items-center gap-2 text-center bg-[#fff8fc]">
+          <canvas id="vignetteScene2" class="pixel-canvas w-full max-w-[320px] h-auto rounded-xl border-2 border-[#321f45]" width="320" height="120"></canvas>
+          <p id="vignetteCaption2" class="font-pixel text-xs text-fuchsia-700"></p>
+        </div>
+      </div>
+
+      <!-- Section 4: Compatibility Map -->
+      <div class="retro-card p-6 sm:p-7 space-y-5">
+        <div class="text-center space-y-1">
+          <h3 class="font-pixel text-xl text-[#2d1b3d]">♥ 相性診断マップ ♥</h3>
+          <p class="text-xs sm:text-sm text-[#7c648a]">カードをタップすると、そのキャラの詳細とドット絵挿絵を見られます。</p>
+        </div>
+        <div id="compatibilityGrid" class="grid md:grid-cols-3 gap-4"></div>
+      </div>
+    </section>
+
+    <!-- VIEW 4: ALL 16 TYPES ENCYCLOPEDIA (Grouped by 4 Attributes!) -->
+    <section id="viewDex" class="hidden fade-in space-y-7">
+      <div class="text-center space-y-3">
+        <div class="font-pixel text-xs text-pink-600 tracking-widest">★ CHARACTER ENCYCLOPEDIA ★</div>
+        <h2 class="font-pixel text-2xl sm:text-3xl text-[#2d1b3d]">属性別・全16タイプ図鑑</h2>
+        <p class="text-xs sm:text-sm text-[#6c557d]">4つの属性グループごとにキャラをまとめています。タップして夜の素顔を覗いてみよう。</p>
+
+        <div id="dexFilterBar" class="flex flex-wrap justify-center gap-2 pt-1">
+          <button type="button" data-group="ALL" class="dex-filter-btn px-3.5 py-1.5 rounded-full border-2 border-[#321f45] text-xs font-bold bg-[#2d1b3d] text-white transition">すべて表示 (16)</button>
+          <button type="button" data-group="LR" class="dex-filter-btn px-3.5 py-1.5 rounded-full border-2 border-[#321f45] text-xs font-bold bg-white text-pink-700 hover:bg-pink-50 transition">🌹 薔薇の支配者 (LR)</button>
+          <button type="button" data-group="LS" class="dex-filter-btn px-3.5 py-1.5 rounded-full border-2 border-[#321f45] text-xs font-bold bg-white text-purple-700 hover:bg-purple-50 transition">⚡ 禁断の仕掛人 (LS)</button>
+          <button type="button" data-group="FR" class="dex-filter-btn px-3.5 py-1.5 rounded-full border-2 border-[#321f45] text-xs font-bold bg-white text-rose-600 hover:bg-rose-50 transition">🎀 夢見る受容者 (FR)</button>
+          <button type="button" data-group="FS" class="dex-filter-btn px-3.5 py-1.5 rounded-full border-2 border-[#321f45] text-xs font-bold bg-white text-fuchsia-700 hover:bg-fuchsia-50 transition">💋 秘密の快楽主義者 (FS)</button>
+        </div>
+      </div>
+
+      <!-- Attribute-Grouped Sections Container -->
+      <div id="dexGrid" class="space-y-8"></div>
+    </section>
+
+  </main>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="hidden fixed bottom-6 left-1/2 -translate-x-1/2 z-50 px-5 py-3 rounded-full bg-[#2d1b3d] border-2 border-pink-300 text-white font-pixel text-xs sm:text-sm shadow-xl"></div>
+
+  <footer class="max-w-4xl mx-auto px-4 py-8 text-center font-pixel text-xs text-[#8c739c]">
+    ♥ 16タイプ診断・ピンク — 大人の恋愛心理・スキンシップ傾向テスト ♥
+  </footer>
+
+  <script>
+    // =========================================================================
+    // 1. DATA: GROUPS, 30 QUESTIONS, AND 16 CHARACTER PROFILES
+    // =========================================================================
+
+    const GROUP_ORDER = ['LR', 'LS', 'FR', 'FS'];
+
+    const GROUPS = {
+      LR: {
+        id: 'LR',
+        icon: '🌹',
+        name: '薔薇の支配者 (LR)',
+        tagline: '主導権を握りたい × ロマンチック重視',
+        desc: '美しいムードと甘いエスコートで相手を丸ごと包み込み、優雅に主導権を握る王道ロマン派グループ。',
+        gradient: 'linear-gradient(135deg, #9d174d 0%, #db2777 55%, #f472b6 100%)',
+        sectionBg: '#fff3f8',
+        borderCol: '#f472b6',
+        chipBg: '#fce7f3',
+        chipText: '#be185d'
+      },
+      LS: {
+        id: 'LS',
+        icon: '⚡',
+        name: '禁断の仕掛人 (LS)',
+        tagline: '主導権を握りたい × 刺激重視',
+        desc: 'スリル・心理戦・焦らし・本能的なリードで相手の理性を崩すことに快感を覚える、危険な魅力のグループ。',
+        gradient: 'linear-gradient(135deg, #3b0764 0%, #6d28d9 55%, #c026d3 100%)',
+        sectionBg: '#f6f2ff',
+        borderCol: '#a855f7',
+        chipBg: '#ede9fe',
+        chipText: '#6d28d9'
+      },
+      FR: {
+        id: 'FR',
+        icon: '🎀',
+        name: '夢見る受容者 (FR)',
+        tagline: '主導権を握られたい × ロマンチック重視',
+        desc: '愛されている実感と優しいリードに弱く、心を開いた相手の前ではとびきり無防備に甘える愛されグループ。',
+        gradient: 'linear-gradient(135deg, #be123c 0%, #f43f5e 55%, #fb7185 100%)',
+        sectionBg: '#fff4f5',
+        borderCol: '#fb7185',
+        chipBg: '#ffe4e6',
+        chipText: '#e11d48'
+      },
+      FS: {
+        id: 'FS',
+        icon: '💋',
+        name: '秘密の快楽主義者 (FS)',
+        tagline: '主導権を握られたい × 刺激重視',
+        desc: '普段は隠していても、夜になると「もっと強く奪われたい・壊されたい」という背徳スイッチが入る官能グループ。',
+        gradient: 'linear-gradient(135deg, #500724 0%, #9f1239 55%, #e11d48 100%)',
+        sectionBg: '#fdf2f8',
+        borderCol: '#e11d48',
+        chipBg: '#fce7f3',
+        chipText: '#9f1239'
+      }
+    };
+
+    const QUESTIONS = [
+      // --- Stage 1: Q1-10 (無難・王道な恋愛スタイル) ---
+      { id: 1, stage: 1, axis: 'DI', dir: 1, text: 'デートの店やスケジュールは、事前にしっかりリサーチして段取りを組みたい。' },
+      { id: 2, stage: 1, axis: 'LF', dir: 1, text: '恋愛では相手から誘われるのを待つより、自分からアプローチして主導権を握ることが多い。' },
+      { id: 3, stage: 1, axis: 'EP', dir: 1, text: 'どんなに忙しい日でも、短いメッセージや電話で「心の繋がり」を確認し合いたい。' },
+      { id: 4, stage: 1, axis: 'RS', dir: 1, text: '夜景の綺麗なレストランや静かなバーなど、映画のようにロマンチックな空間に弱い。' },
+      { id: 5, stage: 1, axis: 'LF', dir: -1, text: 'デートの行き先やタイミングは、相手に強引なくらい引っ張ってもらう方がキュンとする。' },
+      { id: 6, stage: 1, axis: 'DI', dir: -1, text: '予定をガチガチに決めるより、その場のノリや気分で「今から会おう」と動くのが好きだ。' },
+      { id: 7, stage: 1, axis: 'EP', dir: -1, text: '「好き」と何度も言葉で聞くより、隣で自然に手をつないだり肩を寄せたりする方が愛を感じる。' },
+      { id: 8, stage: 1, axis: 'RS', dir: -1, text: 'ずっと穏やかで平和な関係よりも、少しハラハラしたり刺激がある恋の方が燃える。' },
+      { id: 9, stage: 1, axis: 'LF', dir: 1, text: '二人でいるときの空気感や会話のテンポは、自分がコントロールしている感覚があると落ち着く。' },
+      { id: 10, stage: 1, axis: 'DI', dir: 1, text: '相手との距離を縮めるときは、勢い任せにせず少しずつ段階を踏んで進めたい。' },
+
+      // --- Stage 2: Q11-20 (距離感・ムード・スキンシップ) ---
+      { id: 11, stage: 2, axis: 'EP', dir: -1, text: '会話中、さりげなく相手の髪や手、腰などに触れるスキンシップが自然と多くなる。' },
+      { id: 12, stage: 2, axis: 'RS', dir: 1, text: 'キスやハグをするなら、部屋の照明や香り、BGMなど「甘く浸れるムード」を大切にしたい。' },
+      { id: 13, stage: 2, axis: 'LF', dir: -1, text: '不意打ちで顎をクイッとされたり、壁際に追い詰められたりすると頭が真っ白になる。' },
+      { id: 14, stage: 2, axis: 'DI', dir: -1, text: 'いい雰囲気になったら「今日はここまで」という理性のブレーキが外れやすい方だ。' },
+      { id: 15, stage: 2, axis: 'EP', dir: 1, text: 'どれだけ体の相性が良さそうでも、気持ちが通じ合っていないとスキンシップを楽しむ気になれない。' },
+      { id: 16, stage: 2, axis: 'RS', dir: -1, text: '甘いだけの愛情表現より、少し意地悪されたり焦らされたりする駆け引きにドキドキする。' },
+      { id: 17, stage: 2, axis: 'LF', dir: 1, text: '相手が照れて目を逸らしたり、呼吸が乱れたりする瞬間を見ると「もっと攻めたい」と感じる。' },
+      { id: 18, stage: 2, axis: 'EP', dir: -1, text: '言葉で気持ちを確かめ合うより、抱きしめ合ったときの体温や匂いで相手を記憶している。' },
+      { id: 19, stage: 2, axis: 'RS', dir: 1, text: 'お泊まりの夜は、ゆっくり抱きしめ合いながら甘い言葉を囁き合う時間が一番幸せだ。' },
+      { id: 20, stage: 2, axis: 'DI', dir: 1, text: '特別な夜にするなら、下着や香り、ホテルの雰囲気まで抜かりなく準備しておきたい。' },
+
+      // --- Stage 3: Q21-30 (深夜の本音・ドキドキ過激心理) ---
+      { id: 21, stage: 3, axis: 'RS', dir: -1, text: '「誰かに見られるかも」「いけないことをしている」という背徳感やスリルに強く興奮する。' },
+      { id: 22, stage: 3, axis: 'LF', dir: 1, text: 'ベッドの上では、相手の反応をじっくり観察しながら自分のペースで完全に支配してみたい。' },
+      { id: 23, stage: 3, axis: 'EP', dir: -1, text: '理屈や感情を全部忘れて、肌と肌が触れ合う快感や本能だけに溺れる夜があってもいいと思う。' },
+      { id: 24, stage: 3, axis: 'DI', dir: -1, text: '前戯やムード作りを丁寧に積み上げるより、我慢できなくなって衝動的に求め合う瞬間に一番燃える。' },
+      { id: 25, stage: 3, axis: 'LF', dir: -1, text: '夜だけは普段の自分を手放して、相手に手首を掴まれたり、命令されるがまま身を委ねてみたい。' },
+      { id: 26, stage: 3, axis: 'RS', dir: 1, text: '激しい刺激やマニアックなプレイよりも、愛されている実感が溢れるとろけるような夜が好きだ。' },
+      { id: 27, stage: 3, axis: 'EP', dir: 1, text: '触れ合っている最中でも、目を合わせて名前を呼ばれたり「愛してる」と囁かれると一気に感度が上がる。' },
+      { id: 28, stage: 3, axis: 'DI', dir: 1, text: 'いきなり激しくするより、焦らす時間や緩急を計算してじっくりピークへ持っていく方が好きだ。' },
+      { id: 29, stage: 3, axis: 'RS', dir: -1, text: '目隠しや少し強引な拘束、あるいは言葉責めなど、非日常的で少し過激なスパイスに興味がある。' },
+      { id: 30, stage: 3, axis: 'LF', dir: -1, text: '「もう無理」と思うくらい相手に主導権を奪われて、自分の理性が崩される感覚に憧れる。' }
+    ];
+
+    const TYPES = {
+      LRED: {
+        code: 'LRED', group: 'LR',
+        name: '完璧なる演出家', subName: 'パーフェクト・エスコート',
+        catchphrase: '「今夜のシナリオは完璧。あとは君が、俺（私）の腕の中で蕩けるだけ。」',
+        vignetteNote: 'キャンドルとワインを用意して、今夜も完璧なムードを演出中…',
+        bio: '高い美意識と包容力を兼ね備えた、王道のロマンティック・リーダー。相手が何を望んでいるかを先読みし、デートから告白、夜の時間まで一本の映画のように美しくエスコートします。感情の繋がりを何より大切にするため、単なる遊びでは燃えず「本命をとことん幸せにする」ことに誇りを持つタイプです。',
+        nightStyle: '照明の明るさ、香水の残り香、BGMの選曲まで抜かりなく整えたうえで、丁寧に愛を囁きながらリードします。焦らずじっくりと相手の緊張を解き、目を合わせて名前を呼びながら優美に支配するスタイル。完璧主義ゆえに「相手を最高に気持ちよくさせたい」というサービス精神が異常に高く、終わった後のピロートークまで極上です。',
+        trigger: '自分のプランに相手が目を輝かせて「こんなに大切にされたの初めて」と潤んだ瞳で見つめてきた瞬間。',
+        spicyLevel: '過激度 ★★★☆☆（濃厚ロマン）',
+        meters: { dom: 78, mood: 96, touch: 62, spicy: 58 },
+        strengths: ['安心感とときめきを両立できる圧倒的エスコート力', '相手の小さな変化や欲しい言葉を察する洞察力', '愛する人への一途さと深い包容力'],
+        warnings: ['段取りが崩れると内心ちょっと焦りやすい', '「完璧な恋人」を演じすぎて本音の甘えを隠しがち'],
+        compat: {
+          best: { code: 'FRED', reason: 'あなたの丁寧な演出と深い愛情を、一番純粋に喜んで受け止めてくれる運命の相手。' },
+          spicy: { code: 'FRPI', reason: '計算されたムードの中で無防備に蕩けていく姿に、あなたの独占欲が心地よく刺激されます。' },
+          clash: { code: 'LSPI', reason: 'ムードを飛ばして衝動的に主導権を奪い合うため、ペースが噛み合わず疲れやすい組み合わせ。' }
+        },
+        sprite: {
+          bg: '#ffd6e7', bench: '#7c4d6b', hair: '#3b234a', hairHi: '#6b4580', hairSh: '#22122e',
+          eye: '#d6336c', skin: '#ffe0cc', outfit: '#342240', accent: '#f472b6',
+          hairStyle: 'slick', expr: 'confident', acc: 'rosepin', prop: 'wine'
+        }
+      },
+      LREI: {
+        code: 'LREI', group: 'LR',
+        name: '情熱の詩人', subName: 'ロマンティック・チェイサー',
+        catchphrase: '「理屈なんていらない。今すぐ君を抱きしめたい気持ちが止められないんだ。」',
+        vignetteNote: '薔薇の花束を手に、今にも愛を叫び出しそうな熱い夜…',
+        bio: '恋に落ちた瞬間の熱量がすさまじく、ストレートな愛情表現で相手を真っ直ぐ射抜く情熱家。思った瞬間に「好き」と伝え、会いたくなったら夜中でも駆けつけるようなドラマチックな行動力が魅力です。駆け引きよりも「心と心が激しく響き合う瞬間」に生きています。',
+        nightStyle: 'ムードが高まった瞬間、理性のタガが外れて熱いキスと甘い言葉の嵐で相手を包み込みます。テクニックを組み立てるより「どれだけ愛しているか」を全身と視線でぶつける直球スタイル。耳元で何度も名前を呼び、抱きしめる力がどんどん強くなる、息が詰まるほど濃厚な夜を演出します。',
+        trigger: 'ふとした瞬間に目が合い、相手が照れながらも「もっとそばに来て」と心を許してくれたとき。',
+        spicyLevel: '過激度 ★★★☆☆（情熱フルスロットル）',
+        meters: { dom: 74, mood: 88, touch: 72, spicy: 66 },
+        strengths: ['嘘のない情熱で相手の心を丸ごと溶かす突破力', 'マンネリ知らずのドラマチックな愛情表現', '感情を素直に言葉にできる誠実さ'],
+        warnings: ['気持ちが高ぶると相手のペースを置き去りにしがち', '温度差を感じると急に不安になって暴走しやすい'],
+        compat: {
+          best: { code: 'FREI', reason: '二人の情熱が共鳴して、まるで恋愛映画の主人公のような濃密な恋に落ちます。' },
+          spicy: { code: 'FSEI', reason: '少し危うい魅力に火がつき、理性を忘れて一晩中求め合う激しい化学反応が起きます。' },
+          clash: { code: 'LSED', reason: 'あなたの熱い直球アプローチを冷静に分析・コントロールされ、息苦しさを感じやすい相手。' }
+        },
+        sprite: {
+          bg: '#ffe2d6', bench: '#8a5a5a', hair: '#c93855', hairHi: '#f26b82', hairSh: '#801c31',
+          eye: '#ff5c8a', skin: '#ffe2ce', outfit: '#4d2339', accent: '#ff9ebb',
+          hairStyle: 'wavy', expr: 'sparkle', acc: 'none', prop: 'rose'
+        }
+      },
+      LRPD: {
+        code: 'LRPD', group: 'LR',
+        name: '甘美な調香師', subName: 'センシュアル・マエストロ',
+        catchphrase: '「急がなくていいよ。指先ひとつで、君の全部をゆっくり溶かしてあげる。」',
+        vignetteNote: 'お気に入りの香りを纏い、じっくりと距離を詰める準備中…',
+        bio: '五感すべてを使って愛を味わう、色気あふれる大人のエスコート役。言葉で多くを語るより、触れ方・距離感・香り・温度といった繊細なスキンシップで相手を虜にします。落ち着きがあり余裕たっぷりなので、一緒にいるだけで妙な色気と安心感に包まれます。',
+        nightStyle: '前戯からフィニッシュまで、緩急とリズムを完璧に計算する「感覚の職人」。鎖骨や耳裏、指先など繊細なパーツを時間をかけてなぞり、相手が吐息を漏らすタイミングまでコントロールします。激しく攻めるだけでなく「焦らして蕩けさせる」技術がずば抜けて高く、一度知ると抜け出せない沼タイプです。',
+        trigger: '自分が触れた場所から相手の体温がじんわり上がり、小さな吐息が漏れた瞬間。',
+        spicyLevel: '過激度 ★★★★☆（官能スロープレイ）',
+        meters: { dom: 82, mood: 92, touch: 95, spicy: 76 },
+        strengths: ['相手を極上の快感へ導く繊細なスキンシップ力', '焦らず相手を待てる大人の余裕と色気', '五感に訴えるムード作りの天才'],
+        warnings: ['言葉での愛情確認を省きがちで「体目当て？」と誤解されることも', '自分の美意識に合わない雑な展開に冷めやすい'],
+        compat: {
+          best: { code: 'FRPD', reason: 'あなたの丁寧で濃厚なスキンシップを全身で味わってくれる、とろける相性。' },
+          spicy: { code: 'FSPD', reason: '焦らしと丁寧な支配の美学が完璧に噛み合い、朝まで終わらない官能的な夜に。' },
+          clash: { code: 'LSEI', reason: 'せっかく積み上げた色気あるムードを冗談や挑発で茶化され、気持ちが冷めやすい相手。' }
+        },
+        sprite: {
+          bg: '#f2dcff', bench: '#6d4c7d', hair: '#5a3d7a', hairHi: '#8a66b0', hairSh: '#361f4d',
+          eye: '#9b5de5', skin: '#ffe1cd', outfit: '#2f1e3d', accent: '#e0aaff',
+          hairStyle: 'bob', expr: 'sultry', acc: 'ribbon', prop: 'perfume'
+        }
+      },
+      LRPI: {
+        code: 'LRPI', group: 'LR',
+        name: '蕩ける独占欲', subName: 'メルティング・ラバー',
+        catchphrase: '「ねえ、他の誰も見ないで。今すぐここでキスしてもいい？」',
+        vignetteNote: '甘いチョコと止まらないハートで、今すぐくっつきたいモード♥',
+        bio: '甘く優しいムードを愛しながらも、好きな人を前にすると「触れたい！抱きしめたい！」という衝動が抑えきれないスキンシップ魔。人前ではスマートでも、二人きりになった瞬間に距離ゼロまで密着してくるギャップが最大の魅力です。',
+        nightStyle: '「可愛い」「好き」が限界突破すると、会話の途中でもお構いなしに押し倒してキスを奪います。激しさの中にたっぷりの甘さと独占欲が混ざっており、キスマークをつけたり、離さないようにぎゅっと抱き込んだりする傾向が強め。情熱と体温で相手を溺れさせるタイプです。',
+        trigger: '相手が無防備に微笑んだり、いい匂いを漂わせてすぐ近くに座ってきた瞬間。',
+        spicyLevel: '過激度 ★★★★☆（密着・独占欲MAX）',
+        meters: { dom: 76, mood: 82, touch: 96, spicy: 78 },
+        strengths: ['理屈抜きに「愛されている」と実感させる濃密なハグとキス', '素直な独占欲が相手の自己肯定感を爆上げする', '二人きりのときの甘いギャップ'],
+        warnings: ['距離感が近すぎて、一人の時間が欲しい相手を圧倒することも', '衝動的な愛情表現がときどき少し強引になりがち'],
+        compat: {
+          best: { code: 'FRPI', reason: '甘く押し倒したいあなたと、無防備に溶けたい相手。相性抜群の密着カップル。' },
+          spicy: { code: 'FSPI', reason: 'お互いに理性のブレーキが外れ、ソファでもベッドでも止まらなくなる熱い組み合わせ。' },
+          clash: { code: 'FSED', reason: 'あなたの直球な甘えと衝動を、クールに距離を取って観察されやすく空回りしがち。' }
+        },
+        sprite: {
+          bg: '#ffd9e8', bench: '#995374', hair: '#e86a92', hairHi: '#ffa3c0', hairSh: '#a6385b',
+          eye: '#e63973', skin: '#ffe3d1', outfit: '#5c2441', accent: '#ffccd5',
+          hairStyle: 'fluffy', expr: 'happy', acc: 'heart', prop: 'choco'
+        }
+      },
+      LSED: {
+        code: 'LSED', group: 'LS',
+        name: '冷徹な策士', subName: 'マインド・ドミネーター',
+        catchphrase: '「そんなに強がって、いつまで理性を保っていられるか見せてよ。」',
+        vignetteNote: '眼鏡の奥でニヤリ。相手の弱点を静かに計算中…',
+        bio: '相手の心理を読み解き、言葉と視線でじわじわと追い詰める知的なドSタイプ。ただ激しくするのではなく、「相手に自分のことを考えさせて沼らせる」心理戦のスペシャリストです。普段は涼しい顔をしているのに、二人きりになると急に支配的な本性が顔を出します。',
+        nightStyle: '「まだダメ」「ちゃんと言葉で言ってみて？」と、心理的な焦らしやルールを設けて相手の理性が崩れる瞬間を楽しむスタイル。肉体的な激しさ以上に「心を完全に屈服させ、自分に依存させる」ことに強い快感を覚えます。冷静な声で際どい言葉を耳元で囁く、最も中毒性の高いタイプです。',
+        trigger: '普段しっかりしている相手が、自分の言葉ひとつで顔を赤らめて反論できなくなった瞬間。',
+        spicyLevel: '過激度 ★★★★★（心理支配・言葉責め）',
+        meters: { dom: 95, mood: 68, touch: 55, spicy: 90 },
+        strengths: ['相手の隠れた願望を見抜く鋭い観察眼', '大人の知性とミステリアスな色気', '一度ハマると抜け出せない圧倒的な沼らせ力'],
+        warnings: ['相手を試しすぎて本当に傷つけてしまうことがある', '自分の弱みや本音を見せるのが苦手'],
+        compat: {
+          best: { code: 'FSED', reason: '高度な駆け引きと心理的な支配関係を楽しめる、刺激的で知的な共犯者。' },
+          spicy: { code: 'FSEI', reason: 'あなたの冷徹な優しさに相手が深く沼落ちし、抜け出せない劇薬のような関係に。' },
+          clash: { code: 'FREI', reason: '純粋な甘さを求める相手に対し、あなたの試すような言動がすれ違いを生みやすい。' }
+        },
+        sprite: {
+          bg: '#e5d4ff', bench: '#4b3b6b', hair: '#251c3d', hairHi: '#4e3f78', hairSh: '#140e24',
+          eye: '#a855f7', skin: '#fce1d2', outfit: '#1f1633', accent: '#c084fc',
+          hairStyle: 'slick', expr: 'smirk', acc: 'glasses', prop: 'key'
+        }
+      },
+      LSEI: {
+        code: 'LSEI', group: 'LS',
+        name: '危険な道化師', subName: 'スリル・ジョーカー',
+        catchphrase: '「退屈な恋なんてつまらないでしょ？俺（私）と危ない遊びをしようよ。」',
+        vignetteNote: '今夜はどんなイタズラを仕掛けようか、ウインクして企み中♪',
+        bio: '予測不能な言動と小悪魔的なユーモアで、相手の心をジェットコースターのように揺さぶるトリックスター。わざと嫉妬させたり、急に甘くしたりして、相手の感情が激しく動くのを見るのが大好きです。マンネリとは無縁の刺激的な恋を生み出します。',
+        nightStyle: '「今ここで？」と思うような意外なタイミングやシチュエーションでスイッチを入れるスリル好き。軽い冗談や挑発で相手を煽りつつ、急に真剣な目をして唇を奪う緩急が絶妙です。ちょっとした言葉責めやごっこ遊びなど、遊び心と背徳感を混ぜた夜を好みます。',
+        trigger: '相手が「もう、意地悪しないで…」とムッとしながらも、目が離せなくなっているとき。',
+        spicyLevel: '過激度 ★★★★☆（挑発・背徳スリル）',
+        meters: { dom: 84, mood: 62, touch: 66, spicy: 86 },
+        strengths: ['一緒にいて絶対に飽きないスリルと会話センス', '相手の意外な一面を引き出す天才', '場の空気を一瞬で熱くする色気のある悪戯心'],
+        warnings: ['本心が読めず、相手を不安にさせすぎることがある', '安定した穏やかな日常を退屈に感じやすい'],
+        compat: {
+          best: { code: 'FSEI', reason: '感情のジェットコースターを全力で楽しんでくれる、スリル満点のベストパートナー。' },
+          spicy: { code: 'FSPI', reason: '思いつきの危険な誘いにすぐ乗ってくれるため、背徳感たっぷりの夜が加速します。' },
+          clash: { code: 'FRED', reason: '安心感と誠実さを最優先する相手とは、あなたの悪戯心が誤解を招きやすい。' }
+        },
+        sprite: {
+          bg: '#f8d7ff', bench: '#6e3b6e', hair: '#9d174d', hairHi: '#ec4899', hairSh: '#500724',
+          eye: '#facc15', skin: '#ffe0cc', outfit: '#331436', accent: '#f472b6',
+          hairStyle: 'spiky', expr: 'wink', acc: 'horns', prop: 'card'
+        }
+      },
+      LSPD: {
+        code: 'LSPD', group: 'LS',
+        name: '禁断の調教師', subName: 'ベルベット・マスター',
+        catchphrase: '「抵抗しても無駄だよ。君の体がどこで一番弱いか、もう全部知っているから。」',
+        vignetteNote: '赤いリボンを指に絡めながら、優雅に主導権を握る瞬間…',
+        bio: '高い観察力と確かなテクニックで、相手を快感の頂点まで完璧にコントロールする本格派ドミナント。感情に流されず冷静に相手の呼吸や震えを把握するため、実は非常に安全で頼りがいのある「理想のS」でもあります。',
+        nightStyle: '目隠しやリボンでの軽い拘束、じらしプレイなど、非日常的なスパイスをスマートに取り入れるのが得意。相手の限界を見極めながら少しずつ刺激を強め、「もうダメ」と懇願されるまでじっくり追い込みます。激しいのに決して雑にならない、極上の主従バランスを作り出します。',
+        trigger: '自分の手の中で相手が完全に力を抜き、吐息と反応だけを委ねてくれた瞬間。',
+        spicyLevel: '過激度 ★★★★★（本格ドミナント）',
+        meters: { dom: 98, mood: 74, touch: 94, spicy: 96 },
+        strengths: ['相手を確実に満足させる圧倒的な技術と観察力', '過激なプレイでも安心感を与えられる冷静さ', '大人の色気と揺るがない自信'],
+        warnings: ['常に完璧なリードを求めすぎて自分が甘えるのを忘れがち', '主導権を奪い返されると少し調子が狂う'],
+        compat: {
+          best: { code: 'FSPD', reason: '支配する喜びと委ねる快感が100%噛み合う、究極の主従ベストマッチ。' },
+          spicy: { code: 'FRPD', reason: '甘く丁寧な導入から徐々に深い世界へ引き込むことで、相手が完全に虜になります。' },
+          clash: { code: 'LRED', reason: 'お互いに自分の完璧なシナリオでリードしたい強者同士のため、主導権争いが起きがち。' }
+        },
+        sprite: {
+          bg: '#dec7ff', bench: '#3f2a56', hair: '#1e1b2e', hairHi: '#4a3d6b', hairSh: '#0f0d1a',
+          eye: '#e11d48', skin: '#fce0ce', outfit: '#1c1226', accent: '#fb7185',
+          hairStyle: 'long', expr: 'sultry', acc: 'crown', prop: 'ribbon'
+        }
+      },
+      LSPI: {
+        code: 'LSPI', group: 'LS',
+        name: '野性の略奪者', subName: 'ワイルド・ハンター',
+        catchphrase: '「ごめん、もう我慢の限界。今夜は絶対に帰さないから覚悟して。」',
+        vignetteNote: 'スイッチが入った瞬間、炎のように理性を焼き尽くすモード🔥',
+        bio: '圧倒的なオス・メス本能とスピード感で、狙った獲物を一気に落とす肉食系リーダー。難しい駆け引きや回りくどい言葉より、直感と熱い衝動で相手を圧倒します。圧倒的な生命力と色気に、理屈抜きで惹きつけられる人が続出します。',
+        nightStyle: 'スイッチが入った瞬間、壁ドンや強引なキスで一気に相手の理性を吹き飛ばすワイルド派。優しさよりも「貪られるような激しさ」「息をする暇もないほどのスピード感」が持ち味です。ベッドに限らず、衝動が抑えきれなくなったら場所を選ばず迫ってくる危険な魅力の持ち主。',
+        trigger: '相手が無意識に見せた色っぽい仕草や、挑発的な視線で狩猟本能に火がついた瞬間。',
+        spicyLevel: '過激度 ★★★★★（本能・ワイルド肉食）',
+        meters: { dom: 94, mood: 45, touch: 98, spicy: 95 },
+        strengths: ['迷いのない男前・姐御肌なリード力', '理性を吹き飛ばす圧倒的な色気と情熱', '相手を「強く求められている」と実感させるパワー'],
+        warnings: ['ムード作りやアフターケアを飛ばして雑に見えやすい', '熱しやすく、刺激が減ると急に冷めることも'],
+        compat: {
+          best: { code: 'FSPI', reason: '本能と本能がぶつかり合い、一夜で理性が消し飛ぶ最強のケミストリー。' },
+          spicy: { code: 'FRPI', reason: 'あなたの強引なリードに相手が真っ赤になって溶けていく、背徳感たっぷりの組み合わせ。' },
+          clash: { code: 'FRED', reason: 'ゆっくり心を育てたい相手には、あなたのスピード感が少し強引すぎることがあります。' }
+        },
+        sprite: {
+          bg: '#ffd1dc', bench: '#6b2737', hair: '#b91c1c', hairHi: '#ef4444', hairSh: '#7f1d1d',
+          eye: '#f97316', skin: '#f7d5be', outfit: '#24141c', accent: '#f43f5e',
+          hairStyle: 'spiky', expr: 'smirk', acc: 'horns', prop: 'flame'
+        }
+      },
+      FRED: {
+        code: 'FRED', group: 'FR',
+        name: '純愛のプリンセス', subName: 'ドリーミング・ミューズ',
+        catchphrase: '「ちゃんと目を見て、世界で一番大切だよって教えてほしいの。」',
+        vignetteNote: 'お花を握りしめて、優しいエスコートをそっと待っているよ…',
+        bio: '一途な愛と深い信頼関係を何よりも重んじる、ロマンチックな正統派ヒロイン・ヒーロー気質。軽いノリには絶対になびきませんが、心から信頼できるパートナーにエスコートされたとき、誰よりも深い愛情と献身を見せます。',
+        nightStyle: '激しい刺激よりも、手をつなぎながら見つめ合うような「愛の確認」が最優先。丁寧に段階を踏んで安心させてくれる相手にだけ、秘めた甘い素顔を開放します。恥ずかしがり屋に見えて、実は心を開いた相手には「もっと愛して」と健気に甘えるギャップが破壊的。',
+        trigger: '特別な日に丁寧にエスコートされ、優しく髪を撫でられながら名前を呼ばれた瞬間。',
+        spicyLevel: '過激度 ★★☆☆☆（純愛・甘えんぼ）',
+        meters: { dom: 20, mood: 98, touch: 58, spicy: 40 },
+        strengths: ['一度愛した相手を裏切らない圧倒的な一途さ', '相手を立てて喜ばせられる上品な受容力', '守ってあげたくなるピュアな魅力'],
+        warnings: ['理想が高く、少しでも雑な扱いを受けると心が閉じやすい', '受け身すぎて自分の本当の要望を言えないことがある'],
+        compat: {
+          best: { code: 'LRED', reason: 'あなたの理想とする映画のような愛と安心感を、完璧に叶えてくれる王子様・お姫様。' },
+          spicy: { code: 'LRPD', reason: '丁寧で優しいリードに委ねるうちに、自分でも知らなかった官能的な一面が開花します。' },
+          clash: { code: 'LSPI', reason: 'ムードを省いた急展開に心が追いつかず、不安や戸惑いを感じやすい相手。' }
+        },
+        sprite: {
+          bg: '#ffe4ef', bench: '#a66b85', hair: '#f4a261', hairHi: '#ffd166', hairSh: '#c97a3e',
+          eye: '#3b82f6', skin: '#ffe6d6', outfit: '#fff0f5', accent: '#f472b6',
+          hairStyle: 'long', expr: 'shy', acc: 'halo', prop: 'flower'
+        }
+      },
+      FREI: {
+        code: 'FREI', group: 'FR',
+        name: '恋に落ちる白鳥', subName: 'エモーショナル・ロマンサー',
+        catchphrase: '「運命って信じない？…今夜だけは、あなたの全部に染まりたい。」',
+        vignetteNote: '月明かりの下、胸のドキドキが最高潮になっている瞬間…',
+        bio: '感受性が豊かで、運命的な出会いやドラマチックな瞬間に一瞬で心を奪われるロマンティスト。計画通りに恋をするより、胸が高鳴る直感を信じて飛び込みます。好きな人の言葉や表情ひとつで、天国にも地獄にも行けるほどピュアな感性の持ち主。',
+        nightStyle: '「今、心が完全に通じ合った」と感じた瞬間、理性のリミッターが外れて大胆に身を委ねます。耳元での甘い囁きや、感情のこもった長いキスにめっぽう弱く、感極まって涙目になることも。相手の熱量が高ければ高いほど、自分の感度も一気に跳ね上がる共鳴タイプです。',
+        trigger: '不意に強く抱きしめられて「もう離さない」と真っ直ぐに想いをぶつけられた瞬間。',
+        spicyLevel: '過激度 ★★★☆☆（感極まるエモ夜）',
+        meters: { dom: 26, mood: 92, touch: 66, spicy: 62 },
+        strengths: ['相手の愛情を120%のリアクションで受け止める可愛さ', '恋をドラマチックに彩る豊かな感受性', '素直で嘘のない感情表現'],
+        warnings: ['雰囲気に流されて後悔する恋に落ちやすい', '相手のちょっとした冷たさに傷つきやすい'],
+        compat: {
+          best: { code: 'LREI', reason: 'お互いの感情が真っ直ぐにぶつかり合い、毎日が名シーンになる最高の恋愛。' },
+          spicy: { code: 'LRPI', reason: '情熱的な独占欲に包まれて、甘い夢から覚めたくなくなるほど溺愛されます。' },
+          clash: { code: 'LSPD', reason: '冷静にコントロールされる感覚に「愛より技術？」と寂しさを感じやすい組み合わせ。' }
+        },
+        sprite: {
+          bg: '#dff4ff', bench: '#6b8eb5', hair: '#7dd3fc', hairHi: '#bae6fd', hairSh: '#38bdf8',
+          eye: '#ec4899', skin: '#ffe5d4', outfit: '#fdf2f8', accent: '#93c5fd',
+          hairStyle: 'wavy', expr: 'sparkle', acc: 'ribbon', prop: 'moon'
+        }
+      },
+      FRPD: {
+        code: 'FRPD', group: 'FR',
+        name: '甘えん坊な猫', subName: 'ベルベット・キティ',
+        catchphrase: '「ねえ、もっと優しく撫でて…ちゃんと温めてくれたら、何でも許してあげる。」',
+        vignetteNote: 'ごろごろ甘えて、優しく撫でられるのを待っているよ♪',
+        bio: '普段はマイペースで少しツンとした一面もあるのに、信頼した相手の前ではゴロゴロと喉を鳴らすように甘えるスキンシップ好き。居心地の良い空間と優しい手つきに弱く、一度懐くとずっとくっついていたがる愛され気質です。',
+        nightStyle: '雑な扱いはNGですが、丁寧にほぐされて温められると、驚くほど素直にとろけていく感覚派。頭を撫でられたり、首筋にゆっくりキスされたりするスローな愛撫が大好物です。気持ちよくなると無意識に相手の服をぎゅっと掴むなど、庇護欲を極限まで刺激する反応を見せます。',
+        trigger: '暖かい部屋で後ろからそっと抱きしめられ、耳元や首筋にゆっくり触れられた瞬間。',
+        spicyLevel: '過激度 ★★★☆☆（とろける愛撫派）',
+        meters: { dom: 22, mood: 88, touch: 92, spicy: 68 },
+        strengths: ['触れたときの素直で可愛すぎるリアクション', '相手の「愛したい・可愛がりたい」欲を満たす天性の甘え上手', '心地よい距離感を作る癒やし力'],
+        warnings: ['気分屋に見えてしまい、相手を振り回すことがある', '自分から誘うのが恥ずかしくて待ちの姿勢になりがち'],
+        compat: {
+          best: { code: 'LRPD', reason: 'あなたの敏感なツボを完璧に理解し、極上の手つきで溶かしてくれる最高の相手。' },
+          spicy: { code: 'LSPD', reason: '少し意地悪で巧みなリードに、気づけば甘く飼いならされてしまう快感を味わえます。' },
+          clash: { code: 'LSEI', reason: '落ち着いて甘えたいのに、茶化されたり落ち着かない展開にされてストレスが溜まりがち。' }
+        },
+        sprite: {
+          bg: '#fff0d9', bench: '#a67b5b', hair: '#d98a5b', hairHi: '#f7b98c', hairSh: '#9c5630',
+          eye: '#10b981', skin: '#ffe4d1', outfit: '#f4a2b6', accent: '#ffffff',
+          hairStyle: 'fluffy', expr: 'happy', acc: 'catears', prop: 'bell'
+        }
+      },
+      FRPI: {
+        code: 'FRPI', group: 'FR',
+        name: '無防備な天使', subName: 'ピュア・サレンダー',
+        catchphrase: '「あっ…そんな急に抱きしめられたら、もう何も考えられなくなっちゃう…」',
+        vignetteNote: 'アイスを食べながら油断してたら、すぐドキッとさせられちゃう！',
+        bio: '好きな人からのスキンシップに抗う力がゼロの、天性の愛されキャラクター。頭で計算する前に体が素直に反応してしまうため、相手からすると「たまらなく可愛い」「ついイジワルしたくなる」存在です。明るくて人懐っこいのに、夜は無防備すぎて危険なほど魅力的。',
+        nightStyle: '予定調和よりも、ふとしたハグや不意打ちのキスで一気にスイッチが入るタイプ。相手が少し強引にリードすると、恥ずかしがりながらもあっという間に蕩けてすべてを委ねてしまいます。素直すぎる反応と甘い吐息で、どんな相手も「自分が一番にしてあげたい」と夢中にさせます。',
+        trigger: '会話の途中に突然キスを奪われて、そのままベッドへ引き寄せられた瞬間。',
+        spicyLevel: '過激度 ★★★★☆（無防備・即落ち系）',
+        meters: { dom: 16, mood: 84, touch: 94, spicy: 74 },
+        strengths: ['隠せない素直な反応が相手の自尊心を最高に満たす', '壁がなく一緒にいてとにかく幸せな空気を作れる', '甘いスキンシップを全力で楽しめる才能'],
+        warnings: ['押しに弱すぎて、優しそうな悪い人に流されやすい', 'その場の雰囲気に呑まれて自分の希望を後回しにしがち'],
+        compat: {
+          best: { code: 'LRPI', reason: '甘く激しい独占欲であなたを丸ごと包み込み、幸せいっぱいに愛してくれる相手。' },
+          spicy: { code: 'LSPI', reason: '圧倒的なワイルドさに一瞬で理性が吹き飛び、未知の快感に目覚める組み合わせ。' },
+          clash: { code: 'LSED', reason: 'クールな心理戦や放置気味の駆け引きに耐えられず、不安で泣きたくなってしまいやすい。' }
+        },
+        sprite: {
+          bg: '#d6f5ff', bench: '#5c85b8', hair: '#6abf84', hairHi: '#9ce6b0', hairSh: '#3d8255',
+          eye: '#3b82f6', skin: '#ffe4d1', outfit: '#7c4d63', accent: '#f48fb1',
+          hairStyle: 'twin', expr: 'shy', acc: 'ribbon', prop: 'icecream'
+        }
+      },
+      FSED: {
+        code: 'FSED', group: 'FS',
+        name: '秘密を抱えた小悪魔', subName: 'シークレット・インプ',
+        catchphrase: '「普段の私しか知らないんだ？…もっと奥まで暴けるなら、やってみてよ。」',
+        vignetteNote: '秘密の日記を閉じて、涼しい顔の裏でこっそり期待中…',
+        bio: '表向きはクールでしっかり者、あるいは少しミステリアスな優等生。けれど心の奥底には「自分より一枚上手な相手に、プライドごと綺麗に崩されたい」という秘密の願望を飼っています。簡単には心を開かないからこそ、落とした相手を完全に虜にします。',
+        nightStyle: '最初は余裕のあるフリをして相手を少し挑発したり試したりしますが、実は内心「もっと強く来てほしい」と待っています。知的な言葉責めや、逃げ道を塞がれるような心理的支配に強烈な色気を感じるタイプ。普段の完璧な仮面が剥がれ落ちた瞬間のギャップは、16タイプ中最強クラスです。',
+        trigger: '自分の強がりや嘘を優しく見透かされ、「本当はこうして欲しいんでしょ？」と追い詰められたとき。',
+        spicyLevel: '過激度 ★★★★★（仮面崩壊・秘密のM）',
+        meters: { dom: 34, mood: 66, touch: 58, spicy: 88 },
+        strengths: ['普段の知的さと夜の艶っぽさの圧倒的ギャップ', '相手の格を見極める高い審美眼', '一度許した相手に見せる底知れない色気'],
+        warnings: ['素直になれず「本当は構ってほしい」のに冷たくしてしまいがち', '生半可な相手にはすぐ冷めてしまう'],
+        compat: {
+          best: { code: 'LSED', reason: 'あなたのプライドと秘密を鮮やかに暴き、最高の快感へ導いてくれる唯一の理解者。' },
+          spicy: { code: 'LSPD', reason: '完璧な技術で余裕の仮面を剥ぎ取られ、抗えない甘美な敗北感を味わえます。' },
+          clash: { code: 'LRPI', reason: 'ストレートすぎる甘え方に少し照れくささや物足りなさを感じやすい組み合わせ。' }
+        },
+        sprite: {
+          bg: '#ebd6ff', bench: '#593b75', hair: '#4c1d95', hairHi: '#7c3aed', hairSh: '#2e1065',
+          eye: '#f43f5e', skin: '#fce2d4', outfit: '#2b1838', accent: '#e879f9',
+          hairStyle: 'bob', expr: 'smirk', acc: 'glasses', prop: 'diary'
+        }
+      },
+      FSEI: {
+        code: 'FSEI', group: 'FS',
+        name: '沼落ちの依存症', subName: 'トキシック・ドリーマー',
+        catchphrase: '「ダメだって分かってるのに…あなたに壊されるなら、それでもいい。」',
+        vignetteNote: 'グラスを傾けながら、危うい恋の余韻にどっぷり浸かり中…',
+        bio: '穏やかで無難な恋では満足できず、少し危うい魅力や「二人だけの秘密」に強烈に惹かれる情熱の依存体質。好きになった相手にはとことん深くのめり込み、嫉妬や独占欲すらも「愛されている証拠」としてスパイスに変えてしまいます。',
+        nightStyle: '感情が大きく揺さぶられた直後の、激しくて切ない夜に最も燃えるタイプ。少し意地悪な言葉や、強引に自分のものにされる背徳感に涙が出るほど興奮します。「私だけを見て」「どこにも行かないで」と心が溶け合うような濃厚な繋がりとスリルを同時に求めます。',
+        trigger: '「他の誰にも渡さない」と少し嫉妬混じりの強い口調で抱き寄せられた瞬間。',
+        spicyLevel: '過激度 ★★★★★（背徳・依存ロマンス）',
+        meters: { dom: 24, mood: 72, touch: 70, spicy: 90 },
+        strengths: ['相手を「唯一無二の存在」として全身全霊で愛する深さ', 'スリルとドラマを生み出す魔性の色気', '愛されるほど美しく輝く感情の豊かさ'],
+        warnings: ['刺激を求めて危険な恋やダメンズ・悪女にハマりやすい', '不安になると相手の愛情を試す行動に出がち'],
+        compat: {
+          best: { code: 'LSEI', reason: '飽きさせないスリルと濃い感情のぶつけ合いで、最高に刺激的な恋に溺れられます。' },
+          spicy: { code: 'LSED', reason: '冷たく見えて実は誰より執着してくれる策士に、抜け出せないほど深く沼落ちします。' },
+          clash: { code: 'LRPD', reason: 'スマートで穏やかな余裕に対して「本当に私に夢中なの？」と不安を募らせがち。' }
+        },
+        sprite: {
+          bg: '#ffd6e5', bench: '#702646', hair: '#881337', hairHi: '#e11d48', hairSh: '#4c0519',
+          eye: '#c084fc', skin: '#ffe2d4', outfit: '#3b1025', accent: '#fda4af',
+          hairStyle: 'long', expr: 'sultry', acc: 'heart', prop: 'wine'
+        }
+      },
+      FSPD: {
+        code: 'FSPD', group: 'FS',
+        name: '忠実な快楽主義者', subName: 'シルク・デヴォティー',
+        catchphrase: '「ちゃんとリードしてくれるなら、目隠しでも何でも…全部お任せするよ。」',
+        vignetteNote: 'シルクのリボンをそっと差し出し、特別な夜を待つ姿勢…',
+        bio: '信頼できるパートナーに自分の五感をすべて預け、丁寧にコントロールされることに究極の安らぎと快感を覚える本格派サブミッシブ。乱暴な扱いではなく、秩序と美学のある刺激を愛する洗練された大人タイプです。',
+        nightStyle: '目隠し・リボン・焦らしなど、感覚が研ぎ澄まされるシチュエーションが大好物。視覚を奪われたり動きを封じられたりすることで、相手の吐息や指先の感触だけに意識が集中し、普段の何倍も深く感じられる体質です。信頼関係があるほど大胆に咲き誇ります。',
+        trigger: '落ち着いた声で「動かないで、そのまま感じてて」と優しく命令された瞬間。',
+        spicyLevel: '過激度 ★★★★★（官能・完全委ね型）',
+        meters: { dom: 10, mood: 78, touch: 96, spicy: 94 },
+        strengths: ['相手への深い信頼と、期待に100%応える献身的な色気', '上品さと過激な性癖を併せ持つギャップ', '感覚の鋭さと高い順応力'],
+        warnings: ['信頼が築けるまではガードが固く、本性を見せない', 'リードが下手な相手だと一気に現実に引き戻される'],
+        compat: {
+          best: { code: 'LSPD', reason: 'あなたの美意識と快楽のツボを完璧に満たしてくれる、まさに運命の主従ペア。' },
+          spicy: { code: 'LRPD', reason: '丁寧すぎるほどの官能エスコートで、身も心もドロドロに溶かされます。' },
+          clash: { code: 'LREI', reason: '勢いと感情だけで突っ走る相手だと、繊細な感覚のスイッチが入りにくいことがあります。' }
+        },
+        sprite: {
+          bg: '#e8d9ff', bench: '#563d73', hair: '#cbd5e1', hairHi: '#f8fafc', hairSh: '#94a3b8',
+          eye: '#db2777', skin: '#ffe5d9', outfit: '#2e1a3b', accent: '#f472b6',
+          hairStyle: 'twin', expr: 'sultry', acc: 'ribbon', prop: 'ribbon'
+        }
+      },
+      FSPI: {
+        code: 'FSPI', group: 'FS',
+        name: '本能のスリル中毒', subName: 'ミッドナイト・キャット',
+        catchphrase: '「理屈とか明日とかどうでもいい。今すぐめちゃくちゃにして？」',
+        vignetteNote: '真夜中のスリルに目がキラキラ！理性のブレーキはもうOFF🔥',
+        bio: '頭で考えるより先に本能が動き出す、刺激とスリルの申し子。普段は明るくノリが良いのに、夜のスイッチが入った瞬間に目がとろりと潤み、誰よりも大胆で貪欲な一面を見せます。「いけないこと」「予想外の展開」に心が躍る天性の快楽主義者です。',
+        nightStyle: '丁寧な前置きより、不意打ちで押し倒されたり、少し強引に奪われたりする瞬間に最高潮のスリルを感じます。誰かに気づかれそうなギリギリの距離感や、息が上がるほどの激しいスキンシップが大好物。理性を吹き飛ばしてくれるワイルドな相手となら、朝まで止まりません。',
+        trigger: 'ふとした瞬間に手首を掴まれ、有無を言わさず熱いキスで口を塞がれたとき。',
+        spicyLevel: '過激度 ★★★★★（衝動スリルMAX）',
+        meters: { dom: 18, mood: 48, touch: 98, spicy: 98 },
+        strengths: ['場の空気を一瞬で官能的に変える天性の色気', '計算のない大胆さと最高に熱いリアクション', '相手を本能レベルで夢中にさせる中毒性'],
+        warnings: ['スリルを求めすぎて危険なシチュエーションに飛び込みがち', '平和で規則正しい関係が続くと少し物足りなくなる'],
+        compat: {
+          best: { code: 'LSPI', reason: '最強の肉食リーダーに理性を奪われ、最高に熱い夜を何度でも更新できる相性。' },
+          spicy: { code: 'LSEI', reason: '予想外の挑発と背徳的な遊び心に火がつき、二人だけの秘密がどんどん増えていきます。' },
+          clash: { code: 'LRED', reason: '丁寧に段取りを組む優等生タイプには、少しもどかしさを感じてしまいやすい相手。' }
+        },
+        sprite: {
+          bg: '#ffd6e0', bench: '#7a2e4d', hair: '#ec4899', hairHi: '#f9a8d4', hairSh: '#9d174d',
+          eye: '#a855f7', skin: '#ffe2d1', outfit: '#261426', accent: '#fb7185',
+          hairStyle: 'fluffy', expr: 'wink', acc: 'catears', prop: 'flame'
+        }
+      }
+    };
+
+    const TYPE_ORDER = [
+      'LRED', 'LREI', 'LRPD', 'LRPI',
+      'LSED', 'LSEI', 'LSPD', 'LSPI',
+      'FRED', 'FREI', 'FRPD', 'FRPI',
+      'FSED', 'FSEI', 'FSPD', 'FSPI'
+    ];
+
+    // =========================================================================
+    // 2. PIXEL ART CHARACTER & ANIMATED MINI-VIGNETTE ENGINE
+    // =========================================================================
+
+    function buildCharacterGrid(typeCode, frame = 0, includeBench = true) {
+      const t = TYPES[typeCode];
+      const s = t.sprite;
+      const W = 32, H = 32;
+      const OUTLINE = '#2c1e4a';
+      const grid = Array.from({ length: H }, () => Array(W).fill(null));
+      const setPx = (x, y, c) => {
+        if (x >= 0 && x < W && y >= 0 && y < H) grid[y][x] = c;
+      };
+      const fillRect = (x, y, w, h, c) => {
+        for (let j = y; j < y + h; j++) {
+          for (let i = x; i < x + w; i++) setPx(i, j, c);
+        }
+      };
+
+      const bob = frame % 2 === 1 ? 1 : 0;
+
+      if (includeBench) {
+        const benchY = 23;
+        fillRect(6, benchY + 2, 2, 5, '#e2e8f0');
+        fillRect(24, benchY + 2, 2, 5, '#e2e8f0');
+        fillRect(4, benchY, 24, 3, s.bench);
+        for (let x = 5; x < 27; x++) setPx(x, benchY, s.accent);
+      }
+
+      // Back Hair
+      const hy = 5 + bob;
+      if (s.hairStyle === 'long') {
+        fillRect(8, hy + 4, 16, 13, s.hairSh);
+        fillRect(9, hy + 3, 14, 11, s.hair);
+      } else if (s.hairStyle === 'twin') {
+        fillRect(5, hy + 4, 5, 9, s.hair);
+        fillRect(5, hy + 9, 4, 4, s.hairSh);
+        fillRect(22, hy + 4, 5, 9, s.hair);
+        fillRect(23, hy + 9, 4, 4, s.hairSh);
+        fillRect(9, hy + 4, 14, 10, s.hairSh);
+      } else if (s.hairStyle === 'wavy') {
+        fillRect(7, hy + 4, 18, 12, s.hairSh);
+        fillRect(8, hy + 3, 16, 10, s.hair);
+        setPx(7, hy + 15, s.hair); setPx(24, hy + 15, s.hair);
+      } else if (s.hairStyle === 'fluffy') {
+        fillRect(7, hy + 4, 18, 10, s.hair);
+        fillRect(8, hy + 11, 16, 4, s.hairSh);
+        setPx(6, hy + 8, s.hair); setPx(25, hy + 8, s.hair);
+      } else if (s.hairStyle === 'bob') {
+        fillRect(8, hy + 4, 16, 10, s.hair);
+        fillRect(9, hy + 11, 14, 3, s.hairSh);
+      } else if (s.hairStyle === 'spiky') {
+        fillRect(8, hy + 3, 16, 10, s.hair);
+        setPx(7, hy + 6, s.hair); setPx(24, hy + 6, s.hair);
+        setPx(8, hy + 2, s.hair); setPx(23, hy + 2, s.hair);
+      } else {
+        fillRect(9, hy + 3, 14, 10, s.hair);
+        fillRect(9, hy + 10, 14, 3, s.hairSh);
+      }
+
+      // Seated Chibi Body & Outfit
+      const by = 17 + bob;
+      fillRect(12, 23, 3, 4, s.skin);
+      fillRect(17, 23, 3, 4, s.skin);
+      fillRect(12, 26, 3, 2, '#ffffff');
+      fillRect(17, 26, 3, 2, '#ffffff');
+      fillRect(12, 28, 3, 2, OUTLINE);
+      fillRect(17, 28, 3, 2, OUTLINE);
+
+      fillRect(11, by, 10, 6, s.outfit);
+      fillRect(14, by, 4, 2, s.accent);
+      setPx(15, by + 2, s.accent); setPx(16, by + 2, s.accent);
+      fillRect(10, by + 5, 12, 2, s.accent);
+      fillRect(9, by + 1, 2, 4, s.outfit);
+      fillRect(21, by + 1, 2, 4, s.outfit);
+      setPx(10, by + 4, s.skin);
+      setPx(22, by + 4, s.skin);
+
+      // Head
+      fillRect(10, hy + 4, 12, 8, s.skin);
+      fillRect(11, hy + 11, 10, 2, s.skin);
+      setPx(11, hy + 10, '#ff9eb5');
+      setPx(20, hy + 10, '#ff9eb5');
+
+      // Eyes
+      const blink = frame === 3;
+      if (blink) {
+        fillRect(12, hy + 9, 2, 1, OUTLINE);
+        fillRect(18, hy + 9, 2, 1, OUTLINE);
+      } else {
+        setPx(12, hy + 7, OUTLINE); setPx(12, hy + 8, s.eye); setPx(12, hy + 9, s.eye);
+        setPx(13, hy + 7, '#ffffff'); setPx(13, hy + 8, OUTLINE); setPx(13, hy + 9, s.eye);
+        if (s.expr === 'wink') {
+          fillRect(18, hy + 8, 2, 1, OUTLINE);
+        } else {
+          setPx(18, hy + 7, OUTLINE); setPx(18, hy + 8, s.eye); setPx(18, hy + 9, s.eye);
+          setPx(19, hy + 7, '#ffffff'); setPx(19, hy + 8, OUTLINE); setPx(19, hy + 9, s.eye);
+        }
+        if (s.expr === 'sultry' || s.expr === 'smirk') {
+          fillRect(12, hy + 7, 2, 1, s.hairSh);
+          fillRect(18, hy + 7, 2, 1, s.hairSh);
+        }
+      }
+
+      // Mouth
+      if (s.expr === 'smirk') {
+        setPx(15, hy + 11, '#b85c75'); setPx(16, hy + 11, '#b85c75'); setPx(17, hy + 10, '#b85c75');
+      } else if (s.expr === 'shy') {
+        setPx(15, hy + 11, '#d9738c'); setPx(16, hy + 11, '#d9738c');
+      } else {
+        setPx(15, hy + 11, '#d95b7a'); setPx(16, hy + 11, '#d95b7a');
+      }
+
+      // Top Hair & Bangs
+      fillRect(10, hy, 12, 5, s.hair);
+      fillRect(9, hy + 2, 14, 4, s.hair);
+      fillRect(12, hy + 1, 3, 1, s.hairHi);
+      fillRect(17, hy + 2, 3, 1, s.hairHi);
+      setPx(14, hy + 2, s.hairHi);
+      setPx(10, hy + 6, s.hair); setPx(11, hy + 6, s.hair);
+      setPx(14, hy + 6, s.hair); setPx(15, hy + 6, s.hair);
+      setPx(16, hy + 6, s.hair); setPx(20, hy + 6, s.hair); setPx(21, hy + 6, s.hair);
+      setPx(15, hy + 7, s.hair);
+
+      // Accessories
+      if (s.acc === 'ribbon') {
+        fillRect(9, hy + 1, 2, 3, '#ffffff');
+        fillRect(21, hy + 1, 2, 3, '#ffffff');
+        setPx(10, hy + 2, s.accent); setPx(21, hy + 2, s.accent);
+      } else if (s.acc === 'horns') {
+        setPx(10, hy - 1, '#9f1239'); setPx(10, hy, '#e11d48');
+        setPx(21, hy - 1, '#9f1239'); setPx(21, hy, '#e11d48');
+      } else if (s.acc === 'catears') {
+        fillRect(9, hy - 1, 3, 2, s.hair); setPx(10, hy, '#fda4af');
+        fillRect(20, hy - 1, 3, 2, s.hair); setPx(21, hy, '#fda4af');
+      } else if (s.acc === 'crown') {
+        fillRect(13, hy - 2, 6, 2, '#facc15');
+        setPx(13, hy - 3, '#fde047'); setPx(16, hy - 3, '#fde047'); setPx(18, hy - 3, '#fde047');
+        setPx(15, hy - 1, '#e11d48');
+      } else if (s.acc === 'halo') {
+        fillRect(12, hy - 2, 8, 1, '#fde047');
+        setPx(11, hy - 1, '#fef08a'); setPx(20, hy - 1, '#fef08a');
+      } else if (s.acc === 'glasses') {
+        fillRect(11, hy + 7, 4, 1, '#e2e8f0'); fillRect(17, hy + 7, 4, 1, '#e2e8f0');
+        fillRect(11, hy + 10, 4, 1, '#e2e8f0'); fillRect(17, hy + 10, 4, 1, '#e2e8f0');
+        setPx(15, hy + 8, '#e2e8f0'); setPx(16, hy + 8, '#e2e8f0');
+      } else if (s.acc === 'heart') {
+        setPx(21, hy, '#f43f5e'); setPx(23, hy, '#f43f5e');
+        fillRect(21, hy + 1, 3, 1, '#f43f5e'); setPx(22, hy + 2, '#f43f5e');
+      } else if (s.acc === 'rosepin') {
+        fillRect(20, hy + 1, 2, 2, '#e11d48'); setPx(22, hy + 2, '#22c55e');
+      }
+
+      // Held Prop
+      const px = 8, py = by + 1;
+      if (s.prop === 'icecream') {
+        fillRect(px, py - 2, 3, 3, '#ffffff');
+        fillRect(px, py + 1, 3, 3, '#c97a3e');
+      } else if (s.prop === 'wine') {
+        fillRect(px, py - 2, 3, 2, '#be123c');
+        setPx(px + 1, py, '#e2e8f0'); setPx(px + 1, py + 1, '#e2e8f0');
+        fillRect(px, py + 2, 3, 1, '#e2e8f0');
+      } else if (s.prop === 'rose') {
+        fillRect(px, py - 2, 3, 2, '#e11d48');
+        setPx(px + 1, py, '#22c55e'); setPx(px + 1, py + 1, '#16a34a'); setPx(px + 1, py + 2, '#16a34a');
+      } else if (s.prop === 'perfume') {
+        fillRect(px, py, 3, 3, '#f0abfc');
+        setPx(px + 1, py - 1, '#facc15');
+      } else if (s.prop === 'choco') {
+        fillRect(px, py, 3, 3, '#6b3e26');
+        setPx(px + 1, py + 1, '#f472b6');
+      } else if (s.prop === 'ribbon') {
+        fillRect(px - 1, py, 4, 2, '#e11d48');
+        setPx(px, py + 2, '#fb7185'); setPx(px + 2, py + 2, '#fb7185');
+      } else if (s.prop === 'flame') {
+        setPx(px + 1, py - 2, '#facc15');
+        fillRect(px, py - 1, 3, 2, '#f97316');
+        fillRect(px, py + 1, 3, 1, '#dc2626');
+      } else if (s.prop === 'key') {
+        fillRect(px, py - 1, 3, 2, '#facc15');
+        setPx(px + 1, py + 1, '#facc15'); setPx(px + 1, py + 2, '#facc15'); setPx(px + 2, py + 2, '#facc15');
+      } else if (s.prop === 'moon') {
+        fillRect(px, py - 1, 2, 3, '#fde047');
+        setPx(px + 2, py - 1, '#fde047'); setPx(px + 2, py + 1, '#fde047');
+      } else if (s.prop === 'bell') {
+        fillRect(px, py, 3, 2, '#facc15');
+        setPx(px + 1, py + 2, '#ea580c');
+      } else if (s.prop === 'card') {
+        fillRect(px, py - 1, 3, 4, '#ffffff');
+        setPx(px + 1, py + 1, '#e11d48');
+      } else if (s.prop === 'diary') {
+        fillRect(px, py, 3, 4, '#581c87');
+        setPx(px + 1, py + 1, '#f472b6');
+      } else {
+        setPx(px + 1, py - 1, '#f472b6'); setPx(px, py, '#f472b6'); setPx(px + 2, py, '#f472b6');
+        setPx(px + 1, py, '#fde047'); setPx(px + 1, py + 1, '#22c55e');
+      }
+
+      // 1px Dark Indigo Outline Pass
+      const outlined = Array.from({ length: H }, (_, y) => [...grid[y]]);
+      const dirs = [[-1, 0], [1, 0], [0, -1], [0, 1]];
+      for (let y = 0; y < H; y++) {
+        for (let x = 0; x < W; x++) {
+          if (grid[y][x] === null) {
+            for (const [dx, dy] of dirs) {
+              const nx = x + dx, ny = y + dy;
+              if (nx >= 0 && nx < W && ny >= 0 && ny < H && grid[ny][nx] !== null) {
+                outlined[y][x] = OUTLINE;
+                break;
+              }
+            }
+          }
+        }
+      }
+      return outlined;
+    }
+
+    function blitGrid(ctx, grid, offsetX, offsetY, scale, flipX = false) {
+      const H = grid.length;
+      const W = grid[0].length;
+      for (let y = 0; y < H; y++) {
+        for (let x = 0; x < W; x++) {
+          const c = grid[y][x];
+          if (c) {
+            const dx = flipX ? (W - 1 - x) : x;
+            ctx.fillStyle = c;
+            ctx.fillRect((offsetX + dx) * scale, (offsetY + y) * scale, scale, scale);
+          }
+        }
+      }
+    }
+
+    function drawPixelHeart(ctx, ox, oy, scale, color) {
+      const pts = [
+        [1,0],[2,0],[4,0],[5,0],
+        [0,1],[1,1],[2,1],[3,1],[4,1],[5,1],[6,1],
+        [0,2],[1,2],[2,2],[3,2],[4,2],[5,2],[6,2],
+        [1,3],[2,3],[3,3],[4,3],[5,3],
+        [2,4],[3,4],[4,4],
+        [3,5]
+      ];
+      ctx.fillStyle = color;
+      for (const [x, y] of pts) {
+        ctx.fillRect((ox + x) * scale, (oy + y) * scale, scale, scale);
+      }
+    }
+
+    function drawPixelCharacter(canvas, typeCode, frame = 0) {
+      const t = TYPES[typeCode];
+      if (!t || !canvas) return;
+      const s = t.sprite;
+      const ctx = canvas.getContext('2d');
+      const W = 32;
+      const scale = Math.floor(canvas.width / W) || 4;
+      ctx.imageSmoothingEnabled = false;
+
+      ctx.fillStyle = s.bg;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      // Floating pixel sparkles
+      ctx.fillStyle = 'rgba(255,255,255,0.68)';
+      const spY = frame % 2 === 1 ? 0 : 1;
+      const drawBgPx = (x, y) => ctx.fillRect(x * scale, y * scale, scale, scale);
+      drawBgPx(4, 5 + spY); drawBgPx(3, 6 + spY); drawBgPx(5, 6 + spY); drawBgPx(4, 7 + spY);
+      drawBgPx(27, 4 - spY); drawBgPx(26, 5 - spY); drawBgPx(28, 5 - spY);
+      drawBgPx(26, 13 + spY);
+
+      const grid = buildCharacterGrid(typeCode, frame, true);
+      blitGrid(ctx, grid, 0, 0, scale, false);
+    }
+
+    // Animated Vignette #1: Starry Night Room Mini-Scene (80x32 pixel grid, scale 4 -> 320x128)
+    function drawVignetteScene1(canvas, typeCode, tick = 0) {
+      const t = TYPES[typeCode];
+      if (!t || !canvas) return;
+      const ctx = canvas.getContext('2d');
+      const scale = 4; // 80 x 32 pixels
+      ctx.imageSmoothingEnabled = false;
+
+      // Cozy night wallpaper & floor
+      ctx.fillStyle = '#362147';
+      ctx.fillRect(0, 0, 80 * scale, 24 * scale);
+      ctx.fillStyle = '#533463';
+      ctx.fillRect(0, 24 * scale, 80 * scale, 8 * scale);
+      ctx.fillStyle = '#2c1e4a';
+      ctx.fillRect(0, 24 * scale, 80 * scale, 1 * scale);
+
+      // Cute starry window on the left
+      ctx.fillStyle = '#2c1e4a';
+      ctx.fillRect(6 * scale, 4 * scale, 18 * scale, 14 * scale);
+      ctx.fillStyle = '#1d1838';
+      ctx.fillRect(7 * scale, 5 * scale, 16 * scale, 12 * scale);
+      // Crescent moon & twinkling stars
+      ctx.fillStyle = '#fde047';
+      ctx.fillRect(10 * scale, 7 * scale, 2 * scale, 4 * scale);
+      ctx.fillRect(12 * scale, 7 * scale, 2 * scale, 1 * scale);
+      ctx.fillRect(12 * scale, 10 * scale, 2 * scale, 1 * scale);
+      ctx.fillStyle = tick % 2 === 0 ? '#ffffff' : '#f9a8d4';
+      ctx.fillRect(18 * scale, 8 * scale, 1 * scale, 1 * scale);
+      ctx.fillRect(15 * scale, 13 * scale, 1 * scale, 1 * scale);
+      ctx.fillRect(20 * scale, 12 * scale, 1 * scale, 1 * scale);
+      // Window cross-frame
+      ctx.fillStyle = '#6f4b82';
+      ctx.fillRect(14 * scale, 5 * scale, 1 * scale, 12 * scale);
+      ctx.fillRect(7 * scale, 11 * scale, 16 * scale, 1 * scale);
+
+      // Flickering cute candle on right table
+      ctx.fillStyle = '#7c4d6b';
+      ctx.fillRect(61 * scale, 19 * scale, 12 * scale, 6 * scale);
+      ctx.fillStyle = '#2c1e4a';
+      ctx.fillRect(61 * scale, 18 * scale, 12 * scale, 1 * scale);
+      ctx.fillStyle = '#fff1f2';
+      ctx.fillRect(65 * scale, 14 * scale, 4 * scale, 4 * scale);
+      ctx.fillStyle = tick % 2 === 0 ? '#facc15' : '#fb923c';
+      ctx.fillRect(66 * scale, 11 * scale, 2 * scale, 3 * scale);
+      ctx.fillStyle = '#fef08a';
+      ctx.fillRect(66 * scale, (tick % 2 === 0 ? 10 : 11) * scale, 1 * scale, 1 * scale);
+
+      // Character centered on bench
+      const charFrame = tick % 6 === 5 ? 3 : (tick % 2);
+      const grid = buildCharacterGrid(typeCode, charFrame, true);
+      blitGrid(ctx, grid, 24, 0, scale, false);
+
+      // Floating pixel hearts rising up
+      const floatY = (tick % 4);
+      drawPixelHeart(ctx, 51, 7 - floatY, scale, '#f472b6');
+      if (tick % 2 === 0) {
+        ctx.fillStyle = '#fbcfe8';
+        ctx.fillRect(26 * scale, (6 - (tick % 2)) * scale, 2 * scale, 2 * scale);
+      }
+    }
+
+    // Animated Vignette #2: Best Match Duo Mini-Scene (80x30 pixel grid, scale 4 -> 320x120)
+    function drawVignetteScene2(canvas, typeCode, bestCode, tick = 0) {
+      if (!TYPES[typeCode] || !TYPES[bestCode] || !canvas) return;
+      const ctx = canvas.getContext('2d');
+      const scale = 4; // 80 x 30 pixels
+      ctx.imageSmoothingEnabled = false;
+
+      // Soft pastel blush meadow / lounge backdrop
+      ctx.fillStyle = '#ffe8f2';
+      ctx.fillRect(0, 0, 80 * scale, 23 * scale);
+      ctx.fillStyle = '#f6cfe0';
+      ctx.fillRect(0, 23 * scale, 80 * scale, 7 * scale);
+
+      // Little sparkling pixels
+      ctx.fillStyle = '#ffffff';
+      const sOff = tick % 2;
+      ctx.fillRect(6 * scale, (5 + sOff) * scale, 2 * scale, 2 * scale);
+      ctx.fillRect(72 * scale, (6 - sOff) * scale, 2 * scale, 2 * scale);
+
+      // Left character (You) and Right character (Best Match)
+      const f1 = tick % 6 === 4 ? 3 : (tick % 2);
+      const f2 = tick % 6 === 2 ? 3 : ((tick + 1) % 2);
+      const g1 = buildCharacterGrid(typeCode, f1, true);
+      const g2 = buildCharacterGrid(bestCode, f2, true);
+      blitGrid(ctx, g1, 5, -1, scale, false);
+      blitGrid(ctx, g2, 43, -1, scale, true);
+
+      // Bouncing pixel heart between the two!
+      const bounce = tick % 2 === 0 ? 0 : -2;
+      drawPixelHeart(ctx, 36, 9 + bounce, scale, '#e63973');
+      ctx.fillStyle = '#ffffff';
+      ctx.fillRect(37 * scale, (10 + bounce) * scale, scale, scale);
+    }
+
+    // =========================================================================
+    // 3. STATE MANAGEMENT
+    // =========================================================================
+
+    const PAGE_SIZE = 5;
+    const TOTAL_PAGES = Math.ceil(QUESTIONS.length / PAGE_SIZE);
+    const HERO_SHOWCASE = ['FRPI', 'LSPD', 'LRED', 'FSPI', 'LRPD', 'FSED'];
+
+    const state = {
+      view: 'home',
+      page: 0,
+      answers: {},
+      myResult: null,
+      viewingCode: null,
+      dexFilter: 'ALL',
+      animTick: 0
+    };
+
+    function loadSavedResult() {
+      try {
+        const raw = localStorage.getItem('pink16_saved_result');
+        if (raw) {
+          const parsed = JSON.parse(raw);
+          if (parsed && parsed.code && TYPES[parsed.code]) {
+            state.myResult = parsed;
+          }
+        }
+      } catch (e) { /* ignore storage errors */ }
+    }
+
+    function saveResultToStorage(res) {
+      try {
+        localStorage.setItem('pink16_saved_result', JSON.stringify(res));
+      } catch (e) { /* ignore storage errors */ }
+    }
+
+    // =========================================================================
+    // 4. SCORING LOGIC
+    // =========================================================================
+
+    function calculateResult() {
+      const totals = { LF: 0, RS: 0, EP: 0, DI: 0 };
+      const counts = { LF: 0, RS: 0, EP: 0, DI: 0 };
+      const lateBias = { LF: 0, RS: 0, EP: 0, DI: 0 };
+
+      for (const q of QUESTIONS) {
+        const val = state.answers[q.id] ?? 0;
+        const contribution = val * q.dir;
+        totals[q.axis] += contribution;
+        counts[q.axis] += 1;
+        if (q.stage === 3) lateBias[q.axis] += contribution * 0.01;
+      }
+
+      const pcts = {};
+      const letters = {};
+      const pairs = { LF: ['L', 'F'], RS: ['R', 'S'], EP: ['E', 'P'], DI: ['D', 'I'] };
+
+      for (const axis of ['LF', 'RS', 'EP', 'DI']) {
+        const max = counts[axis] * 3;
+        const rawPct = ((totals[axis] + max) / (2 * max)) * 100;
+        let p = Math.round(rawPct);
+        if (p === 50) {
+          p = (totals[axis] + lateBias[axis]) >= 0 ? 51 : 49;
+        }
+        p = Math.max(2, Math.min(98, p));
+        pcts[axis] = p;
+        letters[axis] = p >= 50 ? pairs[axis][0] : pairs[axis][1];
+      }
+
+      return { code: letters.LF + letters.RS + letters.EP + letters.DI, pcts };
+    }
+
+    function getDefaultPctsForCode(code) {
+      return {
+        LF: code[0] === 'L' ? 76 : 24,
+        RS: code[1] === 'R' ? 74 : 26,
+        EP: code[2] === 'E' ? 75 : 25,
+        DI: code[3] === 'D' ? 72 : 28
+      };
+    }
+
+    // =========================================================================
+    // 5. UI RENDERING
+    // =========================================================================
+
+    let toastTimer = null;
+    function showToast(msg) {
+      const el = document.getElementById('toast');
+      el.textContent = msg;
+      el.classList.remove('hidden', 'toast-enter');
+      void el.offsetWidth;
+      el.classList.add('toast-enter');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => el.classList.add('hidden'), 2600);
+    }
+
+    function setView(viewName) {
+      state.view = viewName;
+      document.getElementById('viewHome').classList.toggle('hidden', viewName !== 'home');
+      document.getElementById('viewQuiz').classList.toggle('hidden', viewName !== 'quiz');
+      document.getElementById('viewResult').classList.toggle('hidden', viewName !== 'result');
+      document.getElementById('viewDex').classList.toggle('hidden', viewName !== 'dex');
+
+      const navQuiz = document.getElementById('navQuizBtn');
+      const navDex = document.getElementById('navDexBtn');
+      navQuiz.className = viewName === 'quiz'
+        ? 'px-3.5 sm:px-4 py-1.5 rounded-full border-2 border-[#321f45] text-xs sm:text-sm font-bold text-white bg-pink-500 shadow-[2px_2px_0_#321f45] transition'
+        : 'px-3.5 sm:px-4 py-1.5 rounded-full border-2 border-[#321f45] text-xs sm:text-sm font-bold text-pink-700 bg-pink-50 hover:bg-pink-100 transition';
+      navDex.className = viewName === 'dex'
+        ? 'px-3.5 sm:px-4 py-1.5 rounded-full border-2 border-[#321f45] text-xs sm:text-sm font-bold text-white bg-[#2d1b3d] shadow-[2px_2px_0_#e6427a] transition'
+        : 'px-3.5 sm:px-4 py-1.5 rounded-full border-2 border-[#321f45] text-xs sm:text-sm font-bold text-[#2d1b3d] bg-white hover:bg-purple-50 transition';
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function renderHomeSavedBanner() {
+      const banner = document.getElementById('savedResultBanner');
+      if (state.myResult && TYPES[state.myResult.code]) {
+        const t = TYPES[state.myResult.code];
+        banner.classList.remove('hidden');
+        document.getElementById('savedResultTitle').textContent = `${t.code}｜『${t.name}』（${t.subName}）`;
+        drawPixelCharacter(document.getElementById('savedResultCanvas'), t.code, 0);
+      } else {
+        banner.classList.add('hidden');
+      }
+    }
+
+    function renderQuizPage() {
+      const start = state.page * PAGE_SIZE;
+      const pageQuestions = QUESTIONS.slice(start, start + PAGE_SIZE);
+      const answeredCount = Object.keys(state.answers).length;
+
+      const stageNum = pageQuestions[0].stage;
+      const stageBadge = document.getElementById('stageBadge');
+      if (stageNum === 1) {
+        stageBadge.textContent = 'Stage 1: 恋愛の基本';
+        stageBadge.className = 'font-pixel px-2.5 py-1 rounded-full bg-pink-100 text-pink-700 border border-pink-300';
+      } else if (stageNum === 2) {
+        stageBadge.textContent = 'Stage 2: 距離感とスキンシップ 💓';
+        stageBadge.className = 'font-pixel px-2.5 py-1 rounded-full bg-rose-100 text-rose-700 border border-rose-300';
+      } else {
+        stageBadge.textContent = 'Stage 3: 深夜の本音モード 🔥';
+        stageBadge.className = 'font-pixel px-2.5 py-1 rounded-full bg-fuchsia-600 text-white border border-[#321f45]';
+      }
+
+      document.getElementById('pageIndicator').textContent = `PAGE ${state.page + 1} / ${TOTAL_PAGES}`;
+      document.getElementById('progressCount').textContent = `${answeredCount} / ${QUESTIONS.length} 回答済み`;
+      document.getElementById('progressBar').style.width = `${Math.round((answeredCount / QUESTIONS.length) * 100)}%`;
+
+      const container = document.getElementById('questionsContainer');
+      const sizes = [
+        { val: 3, cls: 'agree', sz: 'w-11 h-11 sm:w-12 sm:h-12', label: '強くそう思う' },
+        { val: 2, cls: 'agree', sz: 'w-9 h-9 sm:w-10 sm:h-10', label: 'そう思う' },
+        { val: 1, cls: 'agree', sz: 'w-7 h-7 sm:w-8 sm:h-8', label: 'ややそう思う' },
+        { val: 0, cls: 'neutral', sz: 'w-6 h-6 sm:w-7 sm:h-7', label: 'どちらとも言えない' },
+        { val: -1, cls: 'disagree', sz: 'w-7 h-7 sm:w-8 sm:h-8', label: 'あまりそう思わない' },
+        { val: -2, cls: 'disagree', sz: 'w-9 h-9 sm:w-10 sm:h-10', label: 'そう思わない' },
+        { val: -3, cls: 'disagree', sz: 'w-11 h-11 sm:w-12 sm:h-12', label: '全くそう思わない' }
+      ];
+
+      container.innerHTML = pageQuestions.map((q) => {
+        const currentVal = state.answers[q.id];
+        const isAnswered = currentVal !== undefined;
+        const buttonsHtml = sizes.map((opt) => {
+          const sel = currentVal === opt.val ? 'selected' : '';
+          return `<button type="button" class="likert-btn ${opt.cls} ${opt.sz} ${sel}" data-qid="${q.id}" data-val="${opt.val}" aria-label="${opt.label}" title="${opt.label}"></button>`;
+        }).join('');
+
+        return `
+          <div id="qcard-${q.id}" class="question-card retro-card-soft p-5 sm:p-6 ${isAnswered ? 'answered' : ''}">
+            <div class="text-center space-y-2 mb-5">
+              <span class="inline-block font-pixel text-xs px-2.5 py-0.5 rounded-full bg-pink-100 text-pink-700 border border-pink-200">Q${String(q.id).padStart(2, '0')}</span>
+              <p class="text-sm sm:text-base font-bold text-[#2d1b3d] leading-relaxed">${q.text}</p>
+            </div>
+            <div class="flex items-center justify-between gap-1.5 sm:gap-3 max-w-md mx-auto">
+              <span class="hidden sm:inline font-pixel text-xs text-pink-600 w-16 text-right shrink-0">そう思う</span>
+              <div class="flex items-center justify-between flex-1 gap-1.5 sm:gap-2">
+                ${buttonsHtml}
+              </div>
+              <span class="hidden sm:inline font-pixel text-xs text-purple-600 w-20 text-left shrink-0">そう思わない</span>
+            </div>
+            <div class="flex sm:hidden items-center justify-between text-[11px] font-pixel mt-2.5 px-1">
+              <span class="text-pink-600">そう思う</span>
+              <span class="text-[#8c7a99]">どちらとも</span>
+              <span class="text-purple-600">そう思わない</span>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      document.getElementById('prevPageBtn').disabled = state.page === 0;
+      document.getElementById('nextPageBtn').textContent = state.page === TOTAL_PAGES - 1 ? '診断結果を見る ✨' : '次の5問へ ▶';
+    }
+
+    function renderResultPage(typeCode, isOwnDiagnostic = false) {
+      const t = TYPES[typeCode];
+      if (!t) return;
+      state.viewingCode = typeCode;
+      const group = GROUPS[t.group];
+
+      document.getElementById('resultBanner').style.background = group.gradient;
+      document.getElementById('resultGroupBadge').textContent = `${group.icon} ${group.name}｜${group.tagline}`;
+      document.getElementById('resultContextLabel').textContent = isOwnDiagnostic ? '♥ YOUR PINK TYPE — あなたの診断結果 ♥' : '★ CHARACTER PROFILE — キャラ詳細 ★';
+      document.getElementById('resultCode').textContent = t.code;
+      document.getElementById('resultName').textContent = `『${t.name}』`;
+      document.getElementById('resultSubName').textContent = t.subName;
+      document.getElementById('resultCatchphrase').textContent = t.catchphrase;
+
+      const backMineBtn = document.getElementById('backToMyResultBtn');
+      if (!isOwnDiagnostic && state.myResult && state.myResult.code !== typeCode) {
+        backMineBtn.classList.remove('hidden');
+      } else {
+        backMineBtn.classList.add('hidden');
+      }
+
+      // Draw Main Sprite + Both Animated Vignettes immediately
+      drawPixelCharacter(document.getElementById('resultSpriteCanvas'), t.code, 0);
+      drawVignetteScene1(document.getElementById('vignetteScene1'), t.code, 0);
+      document.getElementById('vignetteCaption1').textContent = `♥ ${t.vignetteNote}`;
+
+      const bestTarget = TYPES[t.compat.best.code];
+      drawVignetteScene2(document.getElementById('vignetteScene2'), t.code, bestTarget.code, 0);
+      document.getElementById('vignetteCaption2').textContent = `♥ 最高の相性ペア：${t.code} × ${bestTarget.code}（${bestTarget.name}）`;
+
+      // 4 Axis Breakdown Bars
+      const pcts = isOwnDiagnostic && state.myResult ? state.myResult.pcts : getDefaultPctsForCode(t.code);
+      document.getElementById('axisModeNote').textContent = isOwnDiagnostic ? 'あなたの回答から算出したバランス' : 'このタイプの標準的なバランス';
+
+      const axisDefs = [
+        { key: 'LF', title: '主導権', left: '握りたい (L)', right: '握られたい (F)', colorL: '#e6427a', colorR: '#7b4ce2' },
+        { key: 'RS', title: '好みの雰囲気', left: 'ロマンチック (R)', right: '刺激重視 (S)', colorL: '#ec4899', colorR: '#9333ea' },
+        { key: 'EP', title: '愛情表現', left: '心の繋がり (E)', right: 'スキンシップ (P)', colorL: '#f43f5e', colorR: '#a21caf' },
+        { key: 'DI', title: '進め方', left: '計画的 (D)', right: '衝動的 (I)', colorL: '#db2777', colorR: '#6d28d9' }
+      ];
+
+      document.getElementById('axisBarsContainer').innerHTML = axisDefs.map((ax) => {
+        const pLeft = pcts[ax.key];
+        const pRight = 100 - pLeft;
+        const leftWins = pLeft >= 50;
+        const winColor = leftWins ? ax.colorL : ax.colorR;
+        return `
+          <div class="space-y-1.5">
+            <div class="flex items-center justify-between text-xs font-bold">
+              <span class="${leftWins ? 'text-pink-700' : 'text-[#8c7a99]'}">${ax.left} ${pLeft}%</span>
+              <span class="font-pixel text-[11px] text-[#9b89a8]">${ax.title}</span>
+              <span class="${!leftWins ? 'text-purple-700' : 'text-[#8c7a99]'}">${pRight}% ${ax.right}</span>
+            </div>
+            <div class="h-3.5 w-full rounded-full bg-pink-50 overflow-hidden flex border border-[#321f45]/25">
+              <div class="h-full transition-all duration-500" style="width:${pLeft}%; background:${leftWins ? winColor : '#e8d8ee'}"></div>
+              <div class="h-full transition-all duration-500" style="width:${pRight}%; background:${!leftWins ? winColor : '#e8d8ee'}"></div>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      document.getElementById('resultBio').textContent = t.bio;
+      document.getElementById('resultSpicyLevel').textContent = t.spicyLevel;
+      document.getElementById('resultNightStyle').textContent = t.nightStyle;
+      document.getElementById('resultTrigger').textContent = t.trigger;
+
+      const meterDefs = [
+        { label: 'S度（主導・リード欲）', val: t.meters.dom, color: 'from-pink-500 to-rose-500' },
+        { label: 'ムード・雰囲気重視度', val: t.meters.mood, color: 'from-fuchsia-500 to-pink-500' },
+        { label: 'スキンシップ執着度', val: t.meters.touch, color: 'from-rose-500 to-orange-400' },
+        { label: '夜の過激・スリル度', val: t.meters.spicy, color: 'from-purple-600 to-rose-600' }
+      ];
+      document.getElementById('metersContainer').innerHTML = meterDefs.map((m) => `
+        <div class="space-y-1">
+          <div class="flex justify-between text-xs font-bold">
+            <span class="text-[#453152]">${m.label}</span>
+            <span class="font-pixel text-pink-600">${m.val}%</span>
+          </div>
+          <div class="h-3 rounded-full bg-pink-50 overflow-hidden border border-[#321f45]/20">
+            <div class="h-full rounded-full bg-gradient-to-r ${m.color}" style="width:${m.val}%"></div>
+          </div>
+        </div>
+      `).join('');
+
+      document.getElementById('resultStrengths').innerHTML = t.strengths
+        .map((item) => `<li class="flex items-start gap-2"><span class="text-pink-500 font-bold">♥</span><span>${item}</span></li>`)
+        .join('');
+      document.getElementById('resultWarnings').innerHTML = t.warnings
+        .map((item) => `<li class="flex items-start gap-2"><span class="text-purple-500 font-bold">✦</span><span>${item}</span></li>`)
+        .join('');
+
+      const compatDefs = [
+        { key: 'best', badge: '💖 最高の相性', border: 'border-pink-300 hover:border-pink-500', bg: 'bg-pink-50/80', badgeCls: 'bg-pink-600 text-white' },
+        { key: 'spicy', badge: '🔥 沼る・危険な相性', border: 'border-fuchsia-300 hover:border-fuchsia-500', bg: 'bg-fuchsia-50/80', badgeCls: 'bg-fuchsia-600 text-white' },
+        { key: 'clash', badge: '⚡ 相性注意', border: 'border-purple-300 hover:border-purple-500', bg: 'bg-purple-50/70', badgeCls: 'bg-[#2d1b3d] text-white' }
+      ];
+
+      document.getElementById('compatibilityGrid').innerHTML = compatDefs.map((cd) => {
+        const c = t.compat[cd.key];
+        const target = TYPES[c.code];
+        return `
+          <button type="button" data-open-type="${target.code}" class="compat-card text-center rounded-2xl p-4 border-2 ${cd.border} ${cd.bg} transition transform hover:-translate-y-0.5 flex flex-col items-center gap-2.5">
+            <span class="font-pixel px-2.5 py-0.5 rounded-full text-[11px] ${cd.badgeCls}">${cd.badge}</span>
+            <canvas class="pixel-canvas w-20 h-20 rounded-2xl border-2 border-[#321f45] shadow-sm" data-sprite="${target.code}" width="96" height="96"></canvas>
+            <div>
+              <div class="font-pixel text-sm text-pink-700">${target.code}</div>
+              <div class="font-black text-sm text-[#2d1b3d]">『${target.name}』</div>
+              <div class="text-[11px] text-[#7c648a]">${target.subName}</div>
+            </div>
+            <p class="text-xs text-[#4a3559] leading-relaxed">${c.reason}</p>
+            <span class="font-pixel text-[11px] text-pink-600 mt-auto">詳しく見る ▶</span>
+          </button>
+        `;
+      }).join('');
+
+      document.querySelectorAll('#compatibilityGrid canvas[data-sprite]').forEach((cv) => {
+        drawPixelCharacter(cv, cv.dataset.sprite, 0);
+      });
+
+      setView('result');
+    }
+
+    // Grouped by 4 Attributes in Encyclopedia!
+    function renderDex() {
+      const container = document.getElementById('dexGrid');
+      const visibleGroups = state.dexFilter === 'ALL' ? GROUP_ORDER : [state.dexFilter];
+
+      container.innerHTML = visibleGroups.map((groupId) => {
+        const g = GROUPS[groupId];
+        const members = TYPE_ORDER.filter((code) => TYPES[code].group === groupId);
+
+        const cardsHtml = members.map((code) => {
+          const t = TYPES[code];
+          return `
+            <button type="button" data-open-type="${t.code}" class="dex-card bg-white rounded-2xl p-4 border-2 border-[#321f45] shadow-[3px_3px_0_#e6c6d7] hover:-translate-y-1 transition flex flex-col items-center text-center gap-2">
+              <canvas class="pixel-canvas w-24 h-24 rounded-xl border-2 border-[#321f45]/15" data-sprite="${t.code}" width="128" height="128"></canvas>
+              <div>
+                <div class="font-pixel text-base text-pink-700">${t.code}</div>
+                <div class="font-black text-sm text-[#2d1b3d]">『${t.name}』</div>
+                <div class="text-[11px] text-[#7c648a] mt-0.5">${t.subName}</div>
+              </div>
+              <div class="font-pixel text-[10px] px-2 py-0.5 rounded-full bg-rose-50 text-rose-600 border border-rose-200">${t.spicyLevel}</div>
+            </button>
+          `;
+        }).join('');
+
+        return `
+          <div class="retro-card p-5 sm:p-6 space-y-5" style="background:${g.sectionBg}">
+            <div class="text-center space-y-1.5 pb-4 border-b-2 border-dashed" style="border-color:${g.borderCol}66">
+              <span class="inline-block font-pixel text-xs px-3 py-1 rounded-full border border-[#321f45]" style="background:${g.chipBg}; color:${g.chipText}">
+                ${g.icon} ${g.tagline}
+              </span>
+              <h3 class="font-pixel text-xl sm:text-2xl text-[#2d1b3d]">${g.name}</h3>
+              <p class="text-xs sm:text-sm text-[#5e476e] max-w-xl mx-auto">${g.desc}</p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3.5">
+              ${cardsHtml}
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      container.querySelectorAll('canvas[data-sprite]').forEach((cv) => {
+        drawPixelCharacter(cv, cv.dataset.sprite, 0);
+      });
+
+      document.querySelectorAll('.dex-filter-btn').forEach((btn) => {
+        const active = btn.dataset.group === state.dexFilter;
+        btn.classList.toggle('bg-[#2d1b3d]', active);
+        btn.classList.toggle('text-white', active);
+        btn.classList.toggle('bg-white', !active);
+      });
+    }
+
+    // =========================================================================
+    // 6. EVENT HANDLERS & PIXEL ANIMATION LOOP
+    // =========================================================================
+
+    function startNewQuiz() {
+      state.page = 0;
+      state.answers = {};
+      renderQuizPage();
+      setView('quiz');
+    }
+
+    function copyResultText() {
+      const t = TYPES[state.viewingCode];
+      if (!t) return;
+      const best = TYPES[t.compat.best.code];
+      const text = `【16タイプ診断・ピンク】\n私のタイプは ${t.code}『${t.name}（${t.subName}）』でした！\n${t.spicyLevel}\n💖 最高の相性：${best.code}『${best.name}』\n${t.catchphrase}`;
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text)
+          .then(() => showToast('診断結果をクリップボードにコピーしました！'))
+          .catch(() => fallbackCopy(text));
+      } else {
+        fallbackCopy(text);
+      }
+    }
+
+    function fallbackCopy(text) {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      try {
+        document.execCommand('copy');
+        showToast('診断結果をコピーしました！');
+      } catch (e) {
+        showToast('コピーに失敗しました。');
+      }
+      document.body.removeChild(ta);
+    }
+
+    function bindEvents() {
+      document.getElementById('navLogoBtn').addEventListener('click', () => {
+        renderHomeSavedBanner();
+        setView('home');
+      });
+      document.getElementById('navQuizBtn').addEventListener('click', () => {
+        if (Object.keys(state.answers).length > 0 && state.view !== 'quiz') {
+          renderQuizPage();
+          setView('quiz');
+        } else {
+          startNewQuiz();
+        }
+      });
+      document.getElementById('navDexBtn').addEventListener('click', () => {
+        renderDex();
+        setView('dex');
+      });
+
+      // Home Smartphone RPG choices
+      const startBtn = document.getElementById('startQuizBtn');
+      const dexHeroBtn = document.getElementById('openDexFromHeroBtn');
+      startBtn.addEventListener('mouseenter', () => {
+        startBtn.classList.add('active-choice');
+        dexHeroBtn.classList.remove('active-choice');
+      });
+      dexHeroBtn.addEventListener('mouseenter', () => {
+        dexHeroBtn.classList.add('active-choice');
+        startBtn.classList.remove('active-choice');
+      });
+      startBtn.addEventListener('click', startNewQuiz);
+      dexHeroBtn.addEventListener('click', () => {
+        renderDex();
+        setView('dex');
+      });
+      document.getElementById('viewSavedResultBtn').addEventListener('click', () => {
+        if (state.myResult) renderResultPage(state.myResult.code, true);
+      });
+
+      // Quiz Likert Click
+      document.getElementById('questionsContainer').addEventListener('click', (e) => {
+        const btn = e.target.closest('.likert-btn');
+        if (!btn) return;
+        const qid = Number(btn.dataset.qid);
+        const val = Number(btn.dataset.val);
+        state.answers[qid] = val;
+
+        const card = document.getElementById(`qcard-${qid}`);
+        if (card) {
+          card.classList.add('answered');
+          card.classList.remove('unanswered-highlight');
+          card.querySelectorAll('.likert-btn').forEach((b) => {
+            b.classList.toggle('selected', Number(b.dataset.val) === val);
+          });
+        }
+
+        const answeredCount = Object.keys(state.answers).length;
+        document.getElementById('progressCount').textContent = `${answeredCount} / ${QUESTIONS.length} 回答済み`;
+        document.getElementById('progressBar').style.width = `${Math.round((answeredCount / QUESTIONS.length) * 100)}%`;
+
+        const nextCard = document.getElementById(`qcard-${qid + 1}`);
+        if (nextCard && state.answers[qid + 1] === undefined) {
+          setTimeout(() => {
+            nextCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }, 140);
+        }
+      });
+
+      document.getElementById('prevPageBtn').addEventListener('click', () => {
+        if (state.page > 0) {
+          state.page -= 1;
+          renderQuizPage();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      });
+
+      document.getElementById('nextPageBtn').addEventListener('click', () => {
+        const start = state.page * PAGE_SIZE;
+        const pageQuestions = QUESTIONS.slice(start, start + PAGE_SIZE);
+        const firstMissing = pageQuestions.find((q) => state.answers[q.id] === undefined);
+
+        if (firstMissing) {
+          const card = document.getElementById(`qcard-${firstMissing.id}`);
+          if (card) {
+            card.classList.add('unanswered-highlight');
+            card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+          showToast(`Q${firstMissing.id} に回答してください！`);
+          return;
+        }
+
+        if (state.page < TOTAL_PAGES - 1) {
+          state.page += 1;
+          renderQuizPage();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+          const res = calculateResult();
+          state.myResult = res;
+          saveResultToStorage(res);
+          renderResultPage(res.code, true);
+        }
+      });
+
+      document.getElementById('randomFillBtn').addEventListener('click', () => {
+        const vals = [-3, -2, -1, 0, 1, 2, 3];
+        for (const q of QUESTIONS) {
+          state.answers[q.id] = vals[Math.floor(Math.random() * vals.length)];
+        }
+        const res = calculateResult();
+        state.myResult = res;
+        saveResultToStorage(res);
+        showToast('全30問をランダム回答して診断しました！');
+        renderResultPage(res.code, true);
+      });
+
+      document.getElementById('copyResultBtn').addEventListener('click', copyResultText);
+      document.getElementById('retakeQuizBtn').addEventListener('click', startNewQuiz);
+      document.getElementById('backToMyResultBtn').addEventListener('click', () => {
+        if (state.myResult) renderResultPage(state.myResult.code, true);
+      });
+
+      document.getElementById('compatibilityGrid').addEventListener('click', (e) => {
+        const card = e.target.closest('[data-open-type]');
+        if (!card) return;
+        const code = card.dataset.openType;
+        renderResultPage(code, !!(state.myResult && state.myResult.code === code));
+      });
+
+      document.getElementById('dexGrid').addEventListener('click', (e) => {
+        const card = e.target.closest('[data-open-type]');
+        if (!card) return;
+        const code = card.dataset.openType;
+        renderResultPage(code, !!(state.myResult && state.myResult.code === code));
+      });
+
+      document.getElementById('dexFilterBar').addEventListener('click', (e) => {
+        const btn = e.target.closest('.dex-filter-btn');
+        if (!btn) return;
+        state.dexFilter = btn.dataset.group;
+        renderDex();
+      });
+    }
+
+    // Smooth Pixel Animation Loop (Hero Smartphone + Result Sprite + Both Result Vignettes!)
+    let animInterval = null;
+    function startSpriteAnimation() {
+      if (animInterval) clearInterval(animInterval);
+      animInterval = setInterval(() => {
+        state.animTick += 1;
+        const frame = state.animTick % 6 === 5 ? 3 : (state.animTick % 2);
+        if (state.view === 'home') {
+          const heroCode = HERO_SHOWCASE[Math.floor(state.animTick / 6) % HERO_SHOWCASE.length];
+          drawPixelCharacter(document.getElementById('heroMiniCanvas'), heroCode, frame);
+        } else if (state.view === 'result' && state.viewingCode) {
+          const t = TYPES[state.viewingCode];
+          drawPixelCharacter(document.getElementById('resultSpriteCanvas'), t.code, frame);
+          drawVignetteScene1(document.getElementById('vignetteScene1'), t.code, state.animTick);
+          drawVignetteScene2(document.getElementById('vignetteScene2'), t.code, t.compat.best.code, state.animTick);
+        }
+      }, 550);
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      loadSavedResult();
+      bindEvents();
+      renderHomeSavedBanner();
+      drawPixelCharacter(document.getElementById('heroMiniCanvas'), HERO_SHOWCASE[0], 0);
+      startSpriteAnimation();
+    });
+  </script>
+</body>
+</html>
